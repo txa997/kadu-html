@@ -1,0 +1,239 @@
+
+/* 
+  mobile-menu-css-start
+*/
+
+.mobile-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+    display: none;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    &-bg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      display: flex;
+      flex-direction: column;
+      span {
+          flex-wrap: wrap;
+          display: block;
+          background-color: var(--kd-clr-pr-1);
+          width: 100%;
+       
+          &:nth-child(1) {
+            height: 50%;
+          }
+          &:nth-child(2) {
+            height: 50%;
+          }
+      }
+    }
+
+    &-wrap {
+      height: 100%;
+      padding: 60px 200px;
+      overflow-y: scroll;
+
+      @media #{$xl} {
+        padding: 60px 100px;
+      }
+
+      @media #{$lg,$md} {
+        padding: 60px 50px;
+      }
+
+      @media #{$xs} {
+          padding: 40px 20px;
+      }
+      @media #{$sm} {
+        padding: 60px 40px;
+      }
+    }
+
+    &-logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    &-close {
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+      i {
+        line-height: 1;
+        display: inline-block;
+        transition: 300ms ease-in-out;
+      }
+      &:hover {
+        color: var(--kd-clr-sd-1);
+      }
+    }
+
+    &-inner {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+}
+
+
+
+.mobile-menu-search-form-1 {
+  input {
+    height: 60px;
+    border-radius: 5px;
+    padding: 0 30px;
+    background: #fff;
+    font-family: var(--kd-font-pr-1);
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #000;
+    margin-bottom: 10px;
+  }
+  .form-btn {
+    border: none;
+    outline: none;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 12px 20px;
+    color: #000;
+    transition: 300ms var(--cube-1);
+    text-transform: capitalize;
+    font-family: var(--kd-font-pr-1);
+
+    &:hover {
+      background-color: var(--kd-clr-sd-1);
+      color: #000;
+      transform: scale(95%);
+    }
+  }
+}
+
+
+.mobile-menu-social-1 {
+  gap: 25px;
+
+  a {
+
+    display: inline-block;
+    font-size: 22px;
+    line-height: 1;
+    color: #fff;
+    opacity: .8;
+    transition: 300ms var(--cube-1);
+
+    &:hover {
+      color: var(--kd-clr-sd-1);
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+
+
+/* 
+  header-menu-customazition-start
+*/
+
+.mobile-main-navigation {
+  .navbar-nav {
+    li {
+      position: relative;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+
+      a {
+        color: #fff;
+        font-family: var(--kd-font-pr-1);
+        font-size: 24px;
+        text-transform: capitalize;
+        font-weight: 600;
+
+        &:hover {
+          color: var(--kd-clr-sd-1);
+        }
+      }
+
+      .dropdown-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+        background: rgb(255 255 255 / 70%);
+        color: #000;
+        transition: 400ms var(--cube-1);
+
+        &:hover {
+          background-color: var(--kd-clr-sd-1);
+        }
+
+        &:is(.toggle-open) {
+          -webkit-transform: rotate(90deg);
+                  transform: rotate(90deg);
+                  background-color: var(--kd-clr-sd-1);
+        }
+      }
+
+      .dropdown-menu {
+        border-radius: 0;
+        background-color: transparent;
+        border: none;
+        li  {
+          padding-left: 30px;
+          margin-bottom: 0;
+          a {
+            font-size: 18px;
+          }
+
+          .dropdown-btn {
+            position: absolute;
+            top: 5px;
+            width: 20px;
+            height: 22px;
+            font-size: 16px;
+          }
+
+        }
+      }
+
+    }
+  }
+}
+
+
+
+
+
+  
+/* 
+  header-menu-customazition-start
+*/
+
+
+/* 
+  mobile-menu-css-start
+*/
+

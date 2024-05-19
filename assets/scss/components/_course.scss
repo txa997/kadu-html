@@ -1,0 +1,298 @@
+
+.kd-course-1 {
+    &-scn-title {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0 30px;
+        align-items: center;
+    }
+
+    &-tabs-card {
+        position: relative;
+        z-index: 1;
+        border-radius: 20px;
+        background-color: #fff;
+        box-shadow: 0px 0px 40px 0px rgba(94, 92, 154, 0.06);
+
+        .main-img {
+            height: 235px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .price {
+            position: absolute;
+            right: 22px;
+            top: 22px;
+            background: #fff;
+            font-size: 16px;
+            color: #3e3f5e;
+            border-radius: 19px;
+            padding: 10px 19px;
+
+            span {
+                display: inline-block;
+                color: #00c7d9;
+            }
+        }
+
+        .content {
+            padding: 35px 45px;
+            @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+                padding: 35px 15px;
+            }
+        }
+
+        .title {
+            font-size: 25px;
+            margin-bottom: 9px;
+
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                font-size: 22px;
+            }
+        }
+
+        .disc {
+            font-size: 18px;
+            line-height: 27px;
+        }
+
+        &-feature {
+            margin-bottom: 10px;
+    
+            li {
+                font-size: 15px;
+                position: relative;
+                z-index: 1;
+                display: inline-block;
+                padding-left: 20px;
+                
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }
+        
+                &::after {
+                    content: "";
+                    width: 12px;
+                    height: 12px;
+                    border: 2px solid #FB4F25;
+                    position: absolute;
+                    left: 0;
+                    top: 1px;
+                    border-radius: 50%;
+                }
+                
+            }
+        }
+
+        .line {
+            width: 100%;
+            height: 1px;
+            background: #EAEAF5;
+        }
+
+        
+        &-author {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            .author-img {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+            }
+
+            .post {
+                font-size: 13px;
+                color: #3e3f5e;
+            }
+
+            .name {
+                font-size: 15px;
+                color: #3e3f5e;
+            }
+        }
+        
+        .student-count {
+            font-size: 15px;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            padding-left: 20px;
+            color: #3e3f5e;    
+
+            &::after {
+                content: "";
+                width: 12px;
+                height: 12px;
+                border: 2px solid #FB4F25;
+                position: absolute;
+                left: 0;
+                top: 1px;
+                border-radius: 50%;
+            }
+        }
+
+        .card-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+            @media #{$xs} {
+                gap: 10px;
+            }
+
+            @media #{$sm} {
+                gap: 20px;
+            }
+        }
+
+        span.line-2 {
+            height: 75px;
+            width: 1px;
+            background: #EAEAF5;
+            flex: 0 0 auto;
+        }
+        
+        .right {
+            transform: translateY(-5px);
+        }
+        
+    }
+    
+
+    &-tabs-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px 50px;
+        flex-wrap: wrap;
+
+        @media #{$xl,$lg,$md,$xs} {
+            gap: 10px 30px;
+        }
+
+        .nav-item {
+            position: relative;
+            z-index: 1;
+
+            &:not(:last-child) {
+                &::after {
+                    content: "";
+                    width: 2.5px;
+                    height: 13px;
+                    background-color: #c9c9c9;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: -28px;
+
+                    @media #{$xs} {
+                        display: none;
+                    }
+                }
+            }
+
+            .nav-link {
+                font-size: 18px;
+                background: transparent;
+                color: #0d0d0d;
+                padding: 16px 20px;
+                border-radius: 26px;
+                transition: 400ms var(--cube-1);
+
+                &:hover {
+                    color: var(--kd-clr-pr-1);
+                }
+
+                &:is(.active) {
+                    background: var(--kd-clr-pr-1);
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    &-tabs-content-wrap {
+        margin-left: -220px;
+        margin-right: -220px;
+        position: relative;
+        z-index: 1;
+
+        @media #{$xxxl} {
+            margin-left: -100px;
+            margin-right: -100px; 
+        }
+
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            margin-left: 0px;
+            margin-right: 0px; 
+        }
+
+        .swiper-container {
+            padding-top: 30px;
+            padding-bottom: 50px;
+        }
+    }
+
+    &-tabs-slider-btn {
+        @media #{$xl,$lg,$md,$xs} {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        .kd_course_1_slider_next {
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            transform: translateY(-107%);
+            z-index: 1;
+
+            @media #{$xl,$lg,$md,$xs} {
+                position: unset;
+                transform: unset;
+            }
+        }
+        .kd_course_1_slider_prev {
+            position: absolute;
+            left: -25px;
+            top: 50%;
+            transform: translateY(-107%);
+            z-index: 1;
+            @media #{$xl,$lg,$md,$xs} {
+                position: unset;
+                transform: unset;
+            }
+        }
+    }
+
+    &-tabs-content-all {
+        color: #00342c;
+        font-weight: 600;
+
+        a {
+            display: inline-block;
+            transition: .4s var(--cube-1);
+
+            &:hover {
+                color: var(--kd-clr-sd-1);
+                transform: translateX(3px);
+            }
+        }
+    }
+}
+
+
+.kd-ratting-1 {
+    font-size: 15px;
+    gap: 5px;
+    color: #ffde00;
+}

@@ -1,0 +1,278 @@
+/* 
+    hero-1-start
+*/
+
+.kd-hero-1 {
+
+    &-area {
+        position: relative;
+        z-index: 1;
+
+        @media #{$md,$xs} {
+            background: #005E4F;
+        }
+    }
+
+    &-bg-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-position: bottom;
+        }
+    }
+
+    &-bg-il-2 {
+        position: absolute;
+        right: -80px;
+        top: 50%;
+
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            display: none;
+        }
+    }
+
+    &-bg-il-1 {
+        position: absolute;
+        left: -370px;
+        top: 50%;
+
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            display: none;
+        }
+    }
+
+    &-item {
+
+        &-content {
+            @media #{$md,$xs} {
+                margin-bottom: 50px;
+            }
+
+            .title {
+                font-size: 75px;
+                line-height: 1.13;
+                color: #fff;
+                margin-bottom: 14px;
+
+            }
+
+            .disc {
+                max-width: 560px;
+                margin-bottom: 42px;
+            }
+        }
+
+        &-img {
+            position: relative;
+            z-index: 1;
+            margin-left: -50px;
+
+            @media #{$lg,$md,$xs} {
+                margin-left: 0px;
+            }
+
+            &-1 {
+                max-width: 465px;
+                height: 600px;
+                border-radius: 0 0 140px 140px;
+
+                @media #{$xs} {
+                    height: 100%;
+                }
+            }
+            &-2 {
+                max-width: 435px;
+                height: 435px;
+                border-radius: 50%;
+                position: absolute;
+                top: 50px;
+                right: 35px;
+                z-index: -1; 
+
+                @media #{$xs} {
+                    display: none;
+                }
+
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background: var(--kd-clr-sd-1);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 1;
+                    mix-blend-mode: multiply;
+                }
+            }
+
+            &-il-1 {
+                position: absolute;
+                right: 0px;
+                top: 70px;
+                width: 70%;
+                z-index: -2;
+
+                @media #{$md,$xs} {
+                    display: none;
+                }
+            }
+
+            &-il-2 {
+                position: absolute;
+                bottom: 0px;
+                left: 50px;
+                width: 70%;
+                z-index: -2;
+
+                @media #{$md,$xs} {
+                    display: none;
+                }
+            }
+
+            &-il-3 {
+                position: absolute;
+                left: -210px;
+                bottom: 0;
+            }
+
+            &-il-4 {
+                position: absolute;
+                top: 0;
+                right: 12%;
+
+                @media #{$md,$xs} {
+                    display: none;
+                }
+            }
+
+            &-il-5 {
+                position: absolute;
+                right: 100px;
+                bottom: 30px;
+
+                @media #{$md,$xs} {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &-bottom {
+        margin-left: -200px;
+
+        @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+            margin-left: 0;
+        }
+    }
+
+    &-social {
+        gap: 10px 40px;
+
+        .link {
+            position: relative;
+            z-index: 1;
+            transition: 400ms var(--cube-1);
+            &::after {
+                content: "";
+                width: 0%;
+                height: 1px;
+                background-color: #fff;
+                position: absolute;
+                left: auto;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: 400ms var(--cube-1);
+            }
+
+            &:hover {
+                transform: translateX(3px);
+                &::after {
+                    width: 100%;
+                    left: 0;
+                    right: auto;
+                }
+            }
+        }
+    }
+
+
+    &-slider {
+        margin-right: -35px;
+        position: relative;
+        z-index: 1;
+
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            margin-right: 0px;
+        }
+
+        .swiper-container {
+            .swiper-wrapper {
+                .swiper-slide {
+                    &:is(.swiper-slide-active) {
+                        .kd-hero-1-item-content {
+                            .title  {
+                                .split-line {
+                                    div {
+                                        div {
+                                            transform: translateX(0) !important;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-slider-btn {
+        gap: 40px;
+        .slider-btn {
+            position: relative;
+            z-index: 1;
+            transition: 400ms var(--cube-1);
+            cursor: pointer;
+
+            &::after {
+                content: "";
+                width: 0%;
+                height: 1px;
+                background-color: #fff;
+                position: absolute;
+                left: auto;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: 400ms var(--cube-1);
+            }
+
+            &:hover {
+                transform: translateX(3px);
+                &::after {
+                    width: 100%;
+                    left: 0;
+                    right: auto;
+                }
+            }
+        }
+    }
+
+}
+
+
+/* 
+    hero-1-end
+*/
+
+

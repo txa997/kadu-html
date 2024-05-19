@@ -1,0 +1,123 @@
+
+.kd-pop-cat-1 {
+
+    &-left {
+        @media #{$md,$xs} {
+            margin-bottom: 50px;
+        }
+    }
+
+    &-scn-title {
+        .kd-subtitle-1 {
+            font-size: 32px;
+        }
+
+        .kd-section-title-1 {
+            font-size: 35px;
+        }
+
+        .disc {
+            line-height: 28px;
+            font-size: 18px;
+            max-width: 350px;
+        }
+    }
+
+
+    &-item {
+        position: relative;
+        z-index: 1;
+
+        .shape {
+            position: absolute;
+            right: -28px;
+            top: 50%;
+            transform: translateY(-100%);
+        }
+
+        .icon {
+            background: #f9f9f9;
+            height: 170px;
+            border-radius: 35px;
+            padding: 15px;
+        }
+        
+        .title {
+            display: inline-block;
+            background: #006596;
+            font-size: 14px;
+            padding: 10px 13px;
+            border-radius: 20px;
+            transform: translateY(-20px);
+
+            &:is(.has-bg-1) {
+                background: #db3c2d;
+            }
+
+            &:is(.has-bg-2) {
+                background: #0ba73b;
+            }
+
+            &:is(.has-bg-1) {
+                background: #284edb;
+            }
+        }
+    }
+
+    &-slider {
+        position: relative;
+        z-index: 1;
+        margin-left: 30px;
+        @media #{$xl,$lg,$md,$xs} {
+            margin-left: 0px;
+        }
+    }
+
+    &-slider-btn {
+        @media #{$xl,$lg,$md,$xs} {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding-top: 30px;
+        }
+        .kd_pop_cat_1_next {
+            position: absolute;
+            right: -70px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @media #{$xl,$lg,$md,$xs} {
+                position: unset;
+                transform: unset;
+            }
+        }
+        .kd_pop_cat_1_prev {
+            position: absolute;
+            left: -70px;
+            top: 50%;
+            transform: translateY(-50%);
+            @media #{$xl,$lg,$md,$xs} {
+                position: unset;
+                transform: unset;
+            }
+        }
+    }
+
+    &-line {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: #f8f8f8;
+    }
+}
+
+.kd-slider-btn-1 {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #ecf0ff;
+    font-size: 16px;
+    color: #000;
+    cursor: pointer;
+}

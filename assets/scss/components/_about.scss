@@ -1,0 +1,142 @@
+
+.kd-about-1 {
+    &-left {
+        padding-right: 15px;
+        position: relative;
+        z-index: 1;
+
+        @media #{$md,$xs} {
+            margin-bottom: 50px;
+        }
+    }
+
+    &-img {
+        &-1 {
+            height: 540px;
+            border-radius: 10px;
+        }
+
+        &-2 {
+            max-width: 285px;
+            height: 295px;
+            border-radius: 10px;
+            box-shadow: 0px 7px 81px 0px rgba(32, 28, 29, 0.23);
+            position: absolute;
+            bottom: 30px;
+            right: -75px;
+
+            @media #{$md,$xs} {
+                right: 0px;
+            }
+        }
+
+        &-certified {
+            width: 160px;
+            position: absolute;
+            top: -40px;
+            left: -60px;
+
+            @media #{$md,$xs} {
+                left: 0px;
+            }
+        }
+    }
+
+    &-expart {
+        box-shadow: 0px 7px 38px 0px rgba(32, 28, 29, 0.03);
+        display: inline-flex;
+        background: #fff;
+        border-radius: 50px;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 20px 30px;
+        margin-left: -30px;
+        position: relative;
+        z-index: 1;
+            
+        .main-img {
+            width: 96px;
+        }
+    }
+
+    &-right {
+        padding-left: 20px;
+
+        @media #{$md,$xs} {
+              padding-left: 0px;
+        }
+
+        .inner-div {
+            padding-left: 85px;
+
+
+            @media #{$lg} {
+                padding-left: 50px;
+            }
+
+            @media #{$md,$xs} {
+                padding-left: 0px;
+            }
+        }
+
+        .kd-list-1 {
+            margin-bottom: 37px;
+        }
+    }
+
+    &-scn-title {
+        .disc {
+            max-width: 590px;
+        }
+    }
+
+    &-feature-img {
+        display: grid;
+        grid-template-columns: 1fr 2.5fr 1fr;
+        gap: 15px;
+        max-width: 490px;
+
+        @media #{$xs} {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr 2.5fr 1fr;
+        }
+
+        .single-img {
+            height: 100px;
+            border-radius: 50px;
+        }
+    }
+
+}
+
+
+
+.kd-list-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    max-width: 480px;
+
+    @media #{$xs} {
+        grid-template-columns: 1fr;
+    }
+
+    @media #{$sm} {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    li {
+        font-size: 18px;
+        color: #0d0d0d;
+
+        i {
+            margin-right: 3px;
+            color: var(--kd-clr-pr-1);
+        }
+    }
+}
+
