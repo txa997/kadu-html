@@ -483,5 +483,57 @@ $('.parallax-img').parallaxie({
 });
 
 
+gsap.registerPlugin(SplitText);
+
+var swiper = new Swiper("#post__slider .swiper-container", {
+  effect: "fade",
+  speed: 1000,
+  watchSlidesVisibility: true,
+  autoplay: {
+    delay: 10000,
+    disableOnInteraction: false
+  },
+  allowTouchMove: true,
+  loop: true,
+  runCallbacksOnInit: true,
+  on: {
+    slideChangeTransitionStart: function () {
+      splitTextFunction(this.el);
+    }
+  }
+});
+
+function splitTextFunction(sliderDOM) {
+  const slideActive = sliderDOM.querySelector(".swiper-slide-active");
+  const slideCaption = slideActive.querySelector(".swiper__title");
+  const oldActive = sliderDOM.querySelectorAll(".swiper-slide-prev");
+  const oldCaptions = Array.from(oldActive).map(slide => slide.querySelector(".swiper__title"));
+
+  // Hide old captions
+  gsap.set(oldCaptions, { autoAlpha: 0 });
+
+  // Set new caption visible
+  gsap.set(slideCaption, { autoAlpha: 1 });
+
+  // Split text animation
+  const split = new SplitText(slideCaption, { type: "words,chars" });
+
+  gsap.from(split.chars, {
+    opacity: 0,
+    y: 50,
+    ease: "back",
+    stagger: {
+      from: "start",
+      each: 0.05
+    },
+    onComplete: function() {
+      split.revert();
+    }
+  });
+}
+
+
+
+
 
 })(jQuery);

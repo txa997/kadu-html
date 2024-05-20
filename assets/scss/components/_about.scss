@@ -140,3 +140,33 @@
     }
 }
 
+
+
+@import url("https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap");
+body {
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0 20px;
+}
+
+
+
+.swiper-container {
+  height: 500px;
+
+  .swiper-slide {
+    background: #ddd;
+  }
+}
+.swiper__title {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+.swiper__title h2 {
+  font-size: 3rem;
+
+}
