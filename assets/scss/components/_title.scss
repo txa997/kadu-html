@@ -33,7 +33,7 @@
 
 
 .kd-subtitle-1 {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 10px;
     font-size: 42px;
@@ -48,6 +48,10 @@
 
     &:is(.has-clr-2) {
         color: var(--kd-clr-sd-1);
+    }
+
+    &:is(.has-clr-white) {
+        color: #fff;
     }
 }
 

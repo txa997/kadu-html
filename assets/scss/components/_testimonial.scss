@@ -1,0 +1,125 @@
+
+
+.kd-testimonial-1 {
+    &-area {
+        position: relative;
+        z-index: 1;
+        padding-top: 120px;
+        padding-bottom: 200px;
+    }
+
+    &-item {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        align-items: center;
+        border-radius: 20px;
+        overflow: hidden;
+        background: #fff;
+        
+        .main-img {
+            height: 415px;
+        }
+
+        
+        .item-content {
+
+            position: relative;
+            z-index: 1;
+            padding: 30px 60px;
+            
+            .icon {
+                font-size: 80px;
+                line-height: 1;
+                color: #000;
+                position: absolute;
+                right: 80px;
+                top: -10px;
+            }
+        }
+
+        .kd-ratting-1 {
+            font-size: 12px;
+            color: #fff;
+            background: #ef991f;
+            padding: 10px 20px;
+            border-radius: 17px;
+            margin-bottom: 20px;
+        }
+
+        .item-comment {
+            font-size: 19px;
+            line-height: 27px;
+            font-weight: 600;
+            color: #9192a6;
+            margin-bottom: 35px;
+        }
+
+        &-author {
+            gap: 15px;
+            .author-img {
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+            }
+
+            .name {
+                font-size: 20px;
+            }
+            .bio {
+                font-size: 16px;
+                line-height: 27px;
+            }
+        }
+    }
+
+    &-slider {
+        padding-left: 40px;
+        position: relative;
+        z-index: 1;
+    }
+
+    &-slider-btn {
+        @media #{$xl,$lg,$md,$xs} {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .kd-slider-btn-1 {
+            background: #363539;
+            color: #fff;
+        }
+
+        .kd_testimonial_1_slider_next {
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            display: inline-block;
+
+            @media #{$xl,$lg,$md,$xs} {
+                position: unset;
+                transform: unset;
+            }
+        }
+        .kd_testimonial_1_slider_prev {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            display: inline-block;
+            
+            @media #{$xl,$lg,$md,$xs} {
+                position: unset;
+                transform: unset;
+            }
+        }
+    }
+}
+
+
+
+

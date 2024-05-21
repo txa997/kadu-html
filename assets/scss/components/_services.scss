@@ -1,0 +1,83 @@
+
+
+.kd-services-1 {
+    &-scn-title {
+        .disc {
+            max-width: 400px;
+        }
+    }
+
+    &-left {
+        @media #{$md,$xs} {
+            margin-bottom: 50px;
+        }
+    }
+
+    &-card-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .gird-col-2 {
+            padding-top: 50px;
+
+            @media #{$xs} {
+                padding-top: 0px;
+            }
+
+            @media #{$sm} {
+                padding-top: 50px;
+            }
+        }
+    }
+    
+
+    &-card {
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgb(238, 238, 238);
+        border-radius: 20px;
+        padding: 50px  60px;
+        margin-bottom: 20px;
+        box-shadow: 0px 0px 40px 0px rgba(94, 92, 154, 0.06);
+
+        @media #{$xl} {
+            padding: 40px  30px;
+        }
+
+        @media #{$lg,$md,$xs} {
+            padding: 40px  20px;
+        }
+
+        .icon {
+            width: 70px;
+            margin-bottom: 21px;
+        }
+
+        .title {
+            font-size: 26px;
+            margin-bottom: 16px;
+
+            @media #{$lg,$md,$xs} {
+                font-size: 22px;
+            }
+        }
+        
+        .disc {
+            font-size: 17px;
+            line-height: 27px;
+        }
+    }
+}
+
+
+
+
