@@ -2819,7 +2819,6 @@ input:focus::placeholder, textarea:focus::placeholder {
   position: absolute;
   right: -80px;
   top: 50%;
-  animation: 7s kd-jello linear infinite;
 }
 @media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .kd-hero-1-bg-il-2 {
@@ -2830,7 +2829,6 @@ input:focus::placeholder, textarea:focus::placeholder {
   position: absolute;
   left: -370px;
   top: 50%;
-  animation: 4s kd-jello linear infinite;
 }
 @media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .kd-hero-1-bg-il-1 {
@@ -2842,19 +2840,21 @@ input:focus::placeholder, textarea:focus::placeholder {
     margin-bottom: 50px;
   }
 }
+.kd-hero-1-item-content .kd-subtitle-1 {
+  transition: 1s var(--cube-2);
+  transform: translateY(-50px);
+  opacity: 0;
+}
 .kd-hero-1-item-content .title {
   font-size: 75px;
   line-height: 1.13;
   color: #fff;
   margin-bottom: 14px;
   text-transform: unset !important;
-  letter-spacing: -0.1px;
-  overflow: hidden;
-  perspective: 2000px;
-  transform-style: preserve-3d;
+  letter-spacing: 0.5px !important;
 }
-.kd-hero-1-item-content .title .split-line div div:nth-child(1) {
-  text-transform: capitalize;
+.kd-hero-1-item-content .title div {
+  letter-spacing: 0px !important;
 }
 .kd-hero-1-item-content .disc {
   max-width: 560px;
@@ -2945,6 +2945,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   z-index: -2;
   transform: rotate(-100deg);
   transition: 1s var(--cube-1);
+  opacity: 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .kd-hero-1-item-img-il-2 {
@@ -2954,8 +2955,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 .kd-hero-1-item-img-il-3 {
   position: absolute;
   left: -210px;
-  bottom: 0;
-  animation: 5s kd-jello linear infinite;
+  bottom: 10px;
 }
 .kd-hero-1-item-img-il-4 {
   position: absolute;
@@ -2971,7 +2971,6 @@ input:focus::placeholder, textarea:focus::placeholder {
   position: absolute;
   right: 100px;
   bottom: 30px;
-  animation: 5.5s kd-jello linear infinite;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .kd-hero-1-item-img-il-5 {
@@ -3025,12 +3024,19 @@ input:focus::placeholder, textarea:focus::placeholder {
     margin-right: 0px;
   }
 }
+.kd-hero-1-slider .swiper-container .swiper-wrapper .swiper-slide:is(.swiper-slide-active) .kd-hero-1-item-content .kd-subtitle-1 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s;
+}
 .kd-hero-1-slider .swiper-container .swiper-wrapper .swiper-slide:is(.swiper-slide-active) .kd-hero-1-item-content .disc {
+  transition-delay: 1s;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .kd-hero-1-slider .swiper-container .swiper-wrapper .swiper-slide:is(.swiper-slide-active) .kd-hero-1-item-content .btn-wrap {
   transform: translateY(0);
   opacity: 1;
+  transition-delay: 2s;
 }
 .kd-hero-1-slider .swiper-container .swiper-wrapper .swiper-slide:is(.swiper-slide-active) .kd-hero-1-item-img-1 img {
   transform: translateY(0%);
@@ -3043,6 +3049,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 .kd-hero-1-slider .swiper-container .swiper-wrapper .swiper-slide:is(.swiper-slide-active) .kd-hero-1-item-img-il-2 {
   transform: rotate(0deg);
   transition-delay: 0.5s;
+  opacity: 1;
 }
 .kd-hero-1-slider .swiper-container .swiper-wrapper .swiper-slide:is(.swiper-slide-active) .kd-hero-1-item-img-il-1 {
   transform: translate(0px, 0px);

@@ -31,70 +31,85 @@ document.addEventListener("DOMContentLoaded", function () {
 			preloader.classList.add("preloaded");
 			setTimeout(function () {
 				  preloader.remove();
+
+
+
+
+
+
+
 	  
 			  }, 1000 ) ;
+
+
 		}
 
+						  // Initialize Swiper
+						  var swiper = new Swiper(".kd-hero-1-active", {
+							effect: "fade",
+							// speed: 1000,
+							watchSlidesVisibility: true,
+							autoplay: {
+								delay: 30000,
+								disableOnInteraction: false
+							},
+							allowTouchMove: true,
+							loop: true,
+							runCallbacksOnInit: true,
+							fadeEffect: {
+								crossFade: true
+							},
+							navigation: {
+								nextEl: ".kd_hero_1_next",
+								prevEl: ".kd_hero_1_prev",
+							},
+							on: {
+								slideChangeTransitionStart: function () {
+									splitTextFunction(this.el);
+								}
+							}
+						});
+		
+						// Function to split and animate text
+						function splitTextFunction(sliderDOM) {
+							// Get active slide and its caption
+							const slideActive = sliderDOM.querySelector(".swiper-slide-active");
+							const slideCaption = slideActive.querySelector(".kd-hero-1-item-content .title");
+							
+							// Get previous active slides and their captions
+							const oldActive = sliderDOM.querySelectorAll(".swiper-slide-prev, .swiper-slide-duplicate-prev");
+							const oldCaptions = Array.from(oldActive).map(slide => slide.querySelector(".kd-hero-1-item-content .title"));
+		
+							// Hide old captions
+							gsap.set(oldCaptions, { autoAlpha: 0 });
+		
+							// Set new caption visible
+							gsap.set(slideCaption, { autoAlpha: 1 });
+		
+							// Split text animation
+							const split = new SplitText(slideCaption, { type: "words,chars" });
+		
+							gsap.from(split.chars, {
+								opacity: 0,
+								y: 50,
+								ease: "back",
+								duration: .5,
+								delay: 1,
+								stagger: {
+									from: "start",
+									each: 0.05
+								},
+								onComplete: function() {
+									// Revert split text to its original state
+									split.revert();
+								}
+							});
+						}
+		
+						// Trigger splitTextFunction 1 second after initial load
+		
+						splitTextFunction(document.querySelector(".kd-hero-1-active"));
 
-		var swiper = new Swiper(".kd-hero-1-active", {
-			effect: "fade",
-			speed: 1000,
-			watchSlidesVisibility: true,
-			autoplay: {
-				delay: 10000,
-				disableOnInteraction: false
-			},
-			allowTouchMove: true,
-			loop: true,
-			runCallbacksOnInit: true,
-			fadeEffect: {
-				crossFade: true
-			},
-		
-			navigation: {
-				nextEl: ".kd_hero_1_next",
-				prevEl: ".kd_hero_1_prev",
-			},
-		
-			on: {
-				slideChangeTransitionStart: function () {
-				splitTextFunction(this.el);
-				}
-			}
-		
-		});
-		
-		function splitTextFunction(sliderDOM) {
-		  const slideActive = sliderDOM.querySelector(".swiper-slide-active");
-		  const slideCaption = slideActive.querySelector(".kd-hero-1-item-content .title");
-		  const oldActive = sliderDOM.querySelectorAll(".swiper-slide-prev");
-		  const oldCaptions = Array.from(oldActive).map(slide => slide.querySelector(".kd-hero-1-item-content .title"));
-		
-		  // Hide old captions
-		  gsap.set(oldCaptions, { autoAlpha: 0 });
-		
-		  // Set new caption visible
-		  gsap.set(slideCaption, { autoAlpha: 1 });
-		
-		  // Split text animation
-		  const split = new SplitText(slideCaption, { type: "words,chars" });
-		
-		  gsap.from(split.chars, {
-			opacity: 0,
-			y: 50,
-			ease: "back",
-			stagger: {
-			  from: "start",
-			  each: 0.05
-			},
-			onComplete: function() {
-			  split.revert();
-			}
-		  });
-		}
-
-
-		
 		
 	})
 
@@ -503,7 +518,24 @@ if($('.kd-client-2-active').length) {
 
 
   
+/*
+mouse-move-animation
+====start====
+*/
 
+document.addEventListener("mousemove" , parallax);
+function parallax(e){
+
+	document.querySelectorAll(".txa-mm-elm").forEach(function(move){
+
+		var moving_value = move.getAttribute("data-value");
+		var x = (e.clientX * moving_value) /250;
+		var y = (e.clientY * moving_value) /250;
+
+		move.style.transform = "translateX(" + x + "px) translateY(" + y +"px)";
+	})
+
+}
 
 
 // bootstrap-toltip
