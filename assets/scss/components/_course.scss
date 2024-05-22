@@ -1,5 +1,32 @@
 
 .kd-course-1 {
+
+    &-area {
+        position: relative;
+        z-index: 1;
+    }
+    
+    &-bg-img {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
+        z-index: -1;
+        height: calc(100% - 217px);
+
+        @media #{$xl,$lg,$md} {
+            height: calc(100% - 295px);
+        }
+
+        @media #{$xs} {
+            height: calc(100% - 360px);
+        }
+
+        @media #{$sm} {
+            height: calc(100% - 327px);
+        }
+    }
+
     &-scn-title {
         display: flex;
         flex-wrap: wrap;

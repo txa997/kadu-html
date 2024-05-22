@@ -3,6 +3,12 @@
   header-1-css-start
 */
 .kd-header-1 {
+
+  &-area {
+    position: relative;
+    z-index: 2;
+  }
+
   &-top {
     &-row {
       gap: 35px;
@@ -34,6 +40,7 @@
         border-radius: 50%;
         color: #fff;
         font-size: 16px;
+        transition: 300ms var(--cube-1);
       }
 
       .subtitle {
@@ -46,18 +53,39 @@
         font-size: 18px;
         font-weight: 800;
         line-height: 1;
-        transition: 400ms var(--cube-1);
+        transition: 300ms var(--cube-1);
 
         &:hover {
           color: var(--kd-clr-pr-1);
           transform: translateX(3px);
         }
       }
+
+      &:hover {
+        .icon {
+          background: var(--kd-clr-pr-1);
+          animation: kd-jello 1s;
+        }
+      }
     }
   }
 
   &-main {
-    background: #017067;
+    background: #00675f;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      width: 34%;
+      height: 100%;
+      background: #017067;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 7% 100%);
+    }
     
     @media #{$md,$xs} {
       padding: 10px 0;

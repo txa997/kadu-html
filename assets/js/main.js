@@ -35,55 +35,85 @@ document.addEventListener("DOMContentLoaded", function () {
 			  }, 1000 ) ;
 		}
 
-		// text-animation
-		Splitting();
 
-		// hero-1-animation
-		const h1tl = gsap.timeline();
-
-		h1tl.fromTo(".ftc-hero-1-content" , {  opacity: 0, duration: 1 }, { opacity: 1, })
-			.from(".ftc-hero-1-content .btn-wrap " , {  transform: "rotateX(47deg) translateY(-200px)" , transformOrigin: "50% 0%",		duration:1.5, ease: "bounce.out", opacity:0 })
-			.from(".ftc-hero-1-content .inner-div " , {  transform: "rotateX(47deg) translateY(-200px)" , transformOrigin: "50% 0%",
-			duration:1.5, ease: "bounce.out", opacity:0 }, "<.3")
-			.from(".ftc-hero-1-content .title  " , {  transform: "rotateX(47deg) translateY(-200px)" , transformOrigin: "50% 0%",duration:1.5, ease: "bounce.out", opacity:0 }, "<.3")
-			.from(".ftc-hero-1-content .subtitle  " , {  transform: "rotateX(47deg) translateY(-200px)" , transformOrigin: "50% 0%",duration:1.5, ease: "bounce.out", opacity:0 }, "<.3");
-
-		// hero-2-animation
-		const h2tl = gsap.timeline();
-
-		h2tl.from(".ftc-hero-2-item-wrap .item-3-ani " , { scale: 0,	duration:2, ease: "ease", opacity:0 })
-		h2tl.from(".ftc-hero-2-item-wrap .item-2-ani " , { xPercent: -100,	duration:1, ease: "bounce.out", opacity:0 }, "<1" )
-		h2tl.from(".ftc-hero-2-item-wrap .item-1-ani " , { xPercent: -100,	duration:1, ease: "bounce.out", opacity:0 }, "<.5")
-		h2tl.from(".ftc-hero-2-item-wrap .item-4-ani " , { xPercent: 100,	duration:1, ease: "bounce.out", opacity:0 }, "1" )
-		h2tl.from(".ftc-hero-2-item-wrap .item-5-ani " , { xPercent: 100,	duration:1, ease: "bounce.out", opacity:0 }, "1.5" )
-		h2tl.from(".ftc-hero-2-content .title " , {  transform: "rotateX(47deg) translateY(-200px)" , transformOrigin: "50% 0%",		duration:1.5, ease: "bounce.out", opacity:0 }, "<")
-		h2tl.from(".ftc-hero-2-content .subtitle " , {  transform: "rotateX(47deg) translateY(-200px)" , transformOrigin: "50% 0%",		duration:1.5, ease: "bounce.out", opacity:0 }, "<.1")
-			
-
-		// hero-3-animation
-		const h3tl = gsap.timeline();
-
-		h3tl.from(".ftc-hero-3-bg-svg-1 svg path" , { xPercent: -50, transformOrigin: "left", stagger: -.05,	duration:2.5, ease: "ease", })
-		.from(".ftc-hero-3-bg-svg-2 svg path" , { xPercent: 50, transformOrigin: "left", stagger: -.05,	duration:2.5, ease: "ease", }, "<=")
-		.from(".ftc-hero-3-disc " , {  transform: "rotateX(47deg) translateY(-200px)" , transformOrigin: "50% 0%",		duration:1.5, ease: "bounce.out", opacity:0 }, "<=1" )
-		.from(".ftc-hero-3-title " , {  transform: "rotateX(47deg) translateY(-200px)" , transformOrigin: "50% 0%",		duration:1.5, ease: "bounce.out", opacity:0 }, "<=.5")
-
-		// hero-3-animation
-		const h4tl = gsap.timeline();
-
-		h4tl.from(".section-bg-1-cube-1" , { xPercent: -430, yPercent: -220 , rotate: 360,	duration:2.5, ease: "ease", })
-			.from(".section-bg-1-cube-2" , { xPercent: 430, yPercent: -220 , rotate: 360,	duration:2.5, ease: "ease", }, "<")
-			.from(".section-bg-1-cube-3" , { xPercent: -430, yPercent: 220 , rotate: 360,	duration:2.5, ease: "ease", }, "<")
-			.from(".section-bg-1-cube-4" , { xPercent: 430, yPercent: 220 , rotate: 360,	duration:2.5, ease: "ease", }, "<")
-			.from(".ftc-hero-4-content .title .split-line " , { opacity: 0, transformOrigin: "50% 100%", transform: "rotateX(90deg)", stagger: .5, ease: "elastic.out(1,0.3)", duration: 2.5,  }, )
-			.from(".ftc-hero-4-content .btn-wrap " , { opacity: 0, yPercent: 50, ease: "elastic.out(1,0.3)", duration: 2.5,  }, "<=1" )
+		var swiper = new Swiper(".kd-hero-1-active", {
+			effect: "fade",
+			speed: 1000,
+			watchSlidesVisibility: true,
+			autoplay: {
+				delay: 10000,
+				disableOnInteraction: false
+			},
+			allowTouchMove: true,
+			loop: true,
+			runCallbacksOnInit: true,
+			fadeEffect: {
+				crossFade: true
+			},
 		
-		// hero 5 start 
-		gsap.timeline().from(".feh-hero-3-img" , { opacity: 0, y: 400, duration: 2, delay: 1 });
+			navigation: {
+				nextEl: ".kd_hero_1_next",
+				prevEl: ".kd_hero_1_prev",
+			},
+		
+			on: {
+				slideChangeTransitionStart: function () {
+				splitTextFunction(this.el);
+				}
+			}
+		
+		});
+		
+		function splitTextFunction(sliderDOM) {
+		  const slideActive = sliderDOM.querySelector(".swiper-slide-active");
+		  const slideCaption = slideActive.querySelector(".kd-hero-1-item-content .title");
+		  const oldActive = sliderDOM.querySelectorAll(".swiper-slide-prev");
+		  const oldCaptions = Array.from(oldActive).map(slide => slide.querySelector(".kd-hero-1-item-content .title"));
+		
+		  // Hide old captions
+		  gsap.set(oldCaptions, { autoAlpha: 0 });
+		
+		  // Set new caption visible
+		  gsap.set(slideCaption, { autoAlpha: 1 });
+		
+		  // Split text animation
+		  const split = new SplitText(slideCaption, { type: "words,chars" });
+		
+		  gsap.from(split.chars, {
+			opacity: 0,
+			y: 50,
+			ease: "back",
+			stagger: {
+			  from: "start",
+			  each: 0.05
+			},
+			onComplete: function() {
+			  split.revert();
+			}
+		  });
+		}
 
+
+		
+		
 	})
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function glystickyHeader() {
@@ -270,29 +300,29 @@ txaaddclass.forEach(img => {
 
 
 
-// hero-1-slider
-if($('.kd-hero-1-active').length) {
-	let slider = new Swiper('.kd-hero-1-active', {
-		loop: true,
-		spaceBetween: 0,
-		speed: 500,
-		rtl: false,
-		slidesPerView: 1,
-		effect: 'fade',
-		autoplay: {
-			delay: 5000000,
-			},
-		fadeEffect: {
-			crossFade: true
-		},
-		navigation: {
-			nextEl: ".kd_hero_1_next",
-			prevEl: ".kd_hero_1_prev",
-		},
+// // hero-1-slider
+// if($('.kd-hero-1-active').length) {
+// 	let slider = new Swiper('.kd-hero-1-active', {
+// 		loop: true,
+// 		spaceBetween: 0,
+// 		speed: 500,
+// 		rtl: false,
+// 		slidesPerView: 1,
+// 		effect: 'fade',
+// 		autoplay: {
+// 			delay: 5000000,
+// 			},
+// 		fadeEffect: {
+// 			crossFade: true
+// 		},
+// 		navigation: {
+// 			nextEl: ".kd_hero_1_next",
+// 			prevEl: ".kd_hero_1_prev",
+// 		},
 	
-	});
+// 	});
 	
-}
+// }
 
 
   
@@ -429,6 +459,39 @@ if($('.kd-video-course-1-active').length) {
 			},
 			768: {
 				slidesPerView: 2,
+			},
+
+		},
+	});
+}
+
+// client-1-slider
+if($('.kd-client-2-active').length) {
+	let slider = new Swiper('.kd-client-2-active', {
+		loop: true,
+		spaceBetween: 0,
+		slidesPerView: 6,
+		speed: 1000,
+		autoplay: {
+			delay: 5000,
+		},
+
+
+		breakpoints: {
+			0: {
+				slidesPerView: 2,
+			},
+			576: {
+				slidesPerView: 3,
+			},
+			768: {
+				slidesPerView: 4,
+			},
+			992: {
+				slidesPerView: 5,
+			},
+			1200: {
+				slidesPerView: 6,
 			},
 
 		},

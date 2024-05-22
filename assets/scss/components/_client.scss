@@ -1,5 +1,7 @@
 
-
+/* 
+    client-1-start
+*/
 .kd-client-1 {
 
     &-wrap {
@@ -17,6 +19,14 @@
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         gap: 18px;
 
+
+        @media #{$xs} {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
     }
 
     &-item {
@@ -29,3 +39,35 @@
         padding: 15px;
     }
 }
+/* 
+    client-1-end
+*/
+
+/* 
+    client-2-start
+*/
+.kd-client-2 {
+    &-slider {
+        .swiper-container {
+            .swiper-wrapper {
+                justify-content: space-between;
+            }
+        }
+    }
+
+    &-item {
+        width: 100%;
+        height: 100px;
+        padding: 20px;
+
+        img {
+            flex: 0 0 auto;
+            width: 35%;
+            opacity: .5;
+        }
+    }
+}
+
+/* 
+    client-2-end
+*/
