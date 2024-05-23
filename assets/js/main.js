@@ -8,74 +8,6 @@
 "use strict";
 
 
-
-
-// title-animation
-$(window).on('load',function(){
-	var st = $(".ftc-split-text");
-	if(st.length == 0) return;
-	gsap.registerPlugin(SplitText);
-	st.each(function(index, el) {
-	  el.split = new SplitText(el, { 
-		type: "lines,words,chars",
-		linesClass: "split-line"
-	  });
-	
-	  if( $(el).hasClass('ftc-split-threed') ){
-		gsap.set(el.split.chars, {
-		  opacity: 1,
-		  	transformOrigin: "50% 100%",
-		  	transform: "rotateX(90deg)",
-			ease: "elastic.out(1,0.3)",
-			color:'#a249ed',
-			duration: 2.5, 
-		});
-	  }
-	  
-
-	  el.anim = gsap.to(el.split.chars, {
-		scrollTrigger: {
-		  trigger: el,
-		  start: "top 90%",
-		},
-		ease: "elastic.out(1,0.3)",
-		transform: "rotateX(0deg)",
-		color: 'inherit',
-		opacity: 1,
-		duration: 2.5, 
-		stagger: 0.02,
-	  });
-	  
-	});
-})
-
-
-let char_come = gsap.utils.toArray(".title-anim");
-
-  char_come.forEach((char_come) => {
-    let split_char = new SplitText(char_come, {
-      type: "chars, words",
-      lineThreshold: 0.5
-    });
-    const tl2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: char_come,
-        start: "top 90%",
-        end: "bottom 60%",
-        scrub: false,
-        markers: false,
-        toggleActions: "play none none none"
-      }
-    });
-    tl2.from(split_char.chars, {
-      duration: 0.8,
-      x: 70,
-      autoAlpha: 0,
-      stagger: 0.03
-    });
-  });
-
-
 const lenis = new Lenis({
 	duration: 2,	
 })
@@ -99,106 +31,70 @@ document.addEventListener("DOMContentLoaded", function () {
 			preloader.classList.add("preloaded");
 			setTimeout(function () {
 				  preloader.remove();
-
-
-
-
-
-
-
-	  
-			  }, 1000 ) ;
-
+			}, 1000 ) ;
 
 		}
 
-						  // Initialize Swiper
-						  var swiper = new Swiper(".kd-hero-1-active", {
-							effect: "fade",
-							// speed: 1000,
-							watchSlidesVisibility: true,
-							autoplay: {
-								delay: 30000,
-								disableOnInteraction: false
-							},
-							allowTouchMove: true,
-							loop: true,
-							runCallbacksOnInit: true,
-							fadeEffect: {
-								crossFade: true
-							},
-							navigation: {
-								nextEl: ".kd_hero_1_next",
-								prevEl: ".kd_hero_1_prev",
-							},
-							on: {
-								slideChangeTransitionStart: function () {
-									splitTextFunction(this.el);
-								}
-							}
-						});
-		
-						// Function to split and animate text
-						function splitTextFunction(sliderDOM) {
-							// Get active slide and its caption
-							const slideActive = sliderDOM.querySelector(".swiper-slide-active");
-							const slideCaption = slideActive.querySelector(".kd-hero-1-item-content .title");
-							
-							// Get previous active slides and their captions
-							const oldActive = sliderDOM.querySelectorAll(".swiper-slide-prev, .swiper-slide-duplicate-prev");
-							const oldCaptions = Array.from(oldActive).map(slide => slide.querySelector(".kd-hero-1-item-content .title"));
-		
-							// Hide old captions
-							gsap.set(oldCaptions, { autoAlpha: 0 });
-		
-							// Set new caption visible
-							gsap.set(slideCaption, { autoAlpha: 1 });
-		
-							// Split text animation
-							const split = new SplitText(slideCaption, { type: "words,chars" });
-		
-							gsap.from(split.chars, {
-								opacity: 0,
-								y: 50,
-								ease: "back",
-								duration: .5,
-								delay: 1,
-								stagger: {
-									from: "start",
-									each: 0.05
-								},
-								onComplete: function() {
-									// Revert split text to its original state
-									split.revert();
-								}
-							});
-						}
-		
-						// Trigger splitTextFunction 1 second after initial load
-		
-						splitTextFunction(document.querySelector(".kd-hero-1-active"));
+		Splitting();
 
-		
+		// h1-h1-start
+		var swiper = new Swiper(".kd-hero-1-active", {
+			effect: "fade",
+			watchSlidesVisibility: true,
+			autoplay: {
+				delay: 30000,
+				disableOnInteraction: false
+			},
+			allowTouchMove: true,
+			loop: true,
+			runCallbacksOnInit: true,
+			fadeEffect: {
+				crossFade: true
+			},
+			navigation: {
+				nextEl: ".kd_hero_1_next",
+				prevEl: ".kd_hero_1_prev",
+			},
+			on: {
+				slideChangeTransitionStart: function () {
+					splitTextFunction(this.el);
+				}
+			}
+		});
+
+		function splitTextFunction(sliderDOM) {
+			const slideActive = sliderDOM.querySelector(".swiper-slide-active");
+			const slideCaption = slideActive.querySelector(".kd-hero-1-item-content .title");
+			const oldActive = sliderDOM.querySelectorAll(".swiper-slide-prev, .swiper-slide-duplicate-prev");
+			const oldCaptions = Array.from(oldActive).map(slide => slide.querySelector(".kd-hero-1-item-content .title"));
+
+			gsap.set(oldCaptions, { autoAlpha: 0 });
+			gsap.set(slideCaption, { autoAlpha: 1 });
+			const split = new SplitText(slideCaption, { type: "words,chars" });
+
+			gsap.from(split.chars, {
+				opacity: 0,
+				y: 50,
+				ease: "back",
+				duration: .5,
+				delay: 1,
+				stagger: {
+					from: "start",
+					each: 0.05
+				},
+				onComplete: function() {
+					split.revert();
+				}
+			});
+		}
+		splitTextFunction(document.querySelector(".kd-hero-1-active"));
+
+
 	})
 
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// sticky-header
 function glystickyHeader() {
     var $window = $(window);
     var lastScrollTop = 0;
@@ -257,14 +153,11 @@ $('.overlay, .search_1_popup_close').on('click', function() {
 
 // mobile-menu-toggle-start
 gsap.registerPlugin(ScrollTrigger);
-
 gsap.config({
 	nullTargetWarn: false,
 });
-
 var menuToggle = document.getElementById("menuToggle")
 var menuToggle2 = document.getElementById("menuToggle2")
-
 if (menuToggle2) {
 
 	var menuBar = gsap.timeline();
@@ -296,14 +189,12 @@ if (menuToggle2) {
 		opacity: 0,
 
 	}, "<");
-	
 	menubgline.from('.mobile-main-navigation  ul li' , {
 		duration: .5,
 		opacity: 0,
 		y: 50,
 		stagger: .01,
 	},"<");
-
 	menubgline.from('.mobile-menu-search-bar' , {
 		opacity: 0,
 		y: 50,
@@ -313,10 +204,8 @@ if (menuToggle2) {
 		opacity: 0,
 		x: 50,
 	});
-
 	
 	menubgline.reverse();
-
 	menuToggle.addEventListener('click', function(){
 		menubgline.reversed(!menubgline.reversed());
 	});
@@ -326,40 +215,83 @@ if (menuToggle2) {
 	
 }
 
+// title-start
+$(window).on('load',function(){
+	var st = $(".kd-split-text");
+
+	if(st.length == 0) return; gsap.registerPlugin(SplitText); st.each(function(index, el) {
+
+	  el.split = new SplitText(el, { 
+		type: "lines,words,chars",
+		linesClass: "split-line"
+	  });
+
+	  gsap.set(el, { perspective: 400 });
+	
+	  if( $(el).hasClass('kd-title-ani') ){
+		gsap.set(el.split.chars, {
+		  opacity: 1,
+		  color:'#005e4f',
+		  x: "50",
+		  ease: "Back.easeOut",
+		});
+	  }
+	  
+	
+	  el.anim = gsap.to(el.split.chars, {
+		scrollTrigger: {
+		  trigger: el,
+		  start: "top 90%",
+		},
+		x: "0",
+		y: "0",
+		color: 'inherit',
+		opacity: 1,
+		duration: 1, 
+		stagger: 0.02,
+	  });
+
+	});
+})
 
 
-// image-paralax-animation-start
-gsap.utils.toArray(".image-pllx").forEach(function(container) {
-    let image = container.querySelector("img");
-  
-    let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: container,
-          scrub: true,
-          pin: false,
-        },
-      }); 
-      tl.from(image, {
-        yPercent: -30,
-		scale: 1.1,
-        ease: "none",
-      }).to(image, {
-        yPercent: 30,
-		scale: 1.1,
-        ease: "none",
-      }); 
+
+const txaafadeinright = gsap.utils.toArray('.txaa-fade-right');
+const txaafadeinleft = gsap.utils.toArray('.txaa-fade-left');
+const txaaimg1 = gsap.utils.toArray('.kd-img-ani-1');
+
+txaafadeinright.forEach((box, i) => {
+	const anim = gsap.fromTo(box, {autoAlpha: 0, x: 50}, {duration: 1, autoAlpha: 1, x: 0});
+	ScrollTrigger.create({
+		trigger: box,
+		start: "top 80%",
+		animation: anim,
+		toggleActions: 'play none none reverse',
+		once: false,
+	});
 });
 
-const boxes = gsap.utils.toArray('.ftcfadeup');
+txaafadeinleft.forEach((box, i) => {
+	const anim = gsap.fromTo(box, {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0});
+	ScrollTrigger.create({
+		trigger: box,
+		start: "top 80%",
+		animation: anim,
+		toggleActions: 'play none none reverse',
+		once: false,
+	});
+});
 
-boxes.forEach((box, i) => {
-  const anim = gsap.fromTo(box, {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0});
-  ScrollTrigger.create({
-    trigger: box,
-    animation: anim,
-    toggleActions: 'play none none reverse',
-    once: false,
-  });
+txaaimg1.forEach((box, i) => {
+	const anim = gsap.fromTo(box, { autoAlpha: 1, transform: "perspective(0px) rotateX(0deg) rotateY(0deg) scaleX(1) scaleY(1)"}, { autoAlpha: 1, transform: "perspective(600px) rotateX(0.06deg) rotateY(0deg) scaleX(1.2) scaleY(1.2)"});
+	ScrollTrigger.create({
+		trigger: box,
+		start: "top 80%",
+		animation: anim,
+		toggleActions: 'play none none reverse',
+		once: false,
+		markers: true
+	});
 });
 
 
@@ -379,36 +311,6 @@ txaaddclass.forEach(img => {
 	});
 });
 
-
-
-
-
-// // hero-1-slider
-// if($('.kd-hero-1-active').length) {
-// 	let slider = new Swiper('.kd-hero-1-active', {
-// 		loop: true,
-// 		spaceBetween: 0,
-// 		speed: 500,
-// 		rtl: false,
-// 		slidesPerView: 1,
-// 		effect: 'fade',
-// 		autoplay: {
-// 			delay: 5000000,
-// 			},
-// 		fadeEffect: {
-// 			crossFade: true
-// 		},
-// 		navigation: {
-// 			nextEl: ".kd_hero_1_next",
-// 			prevEl: ".kd_hero_1_prev",
-// 		},
-	
-// 	});
-	
-// }
-
-
-  
 // popular-category-1-slider
 if($('.kd-pop-cat-1-active').length) {
 	let slider = new Swiper('.kd-pop-cat-1-active', {

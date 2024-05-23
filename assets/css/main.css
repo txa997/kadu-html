@@ -13,6 +13,9 @@
   --kd-clr-p-1: #797a84;
   --cube-1: cubic-bezier(.57,.21,.69,1.25);
   --cube-2: cubic-bezier(0.31, -0.105, 0.43, 1.4);
+  --wdtBaseTransition: all 0.3s linear 0s;
+  --wdtAltTransition: all 0.35s ease-in-out 0s;
+  /* transform Hover Style */
 }
 
 /* 
@@ -1554,6 +1557,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   overflow: hidden;
   perspective: 2000px;
   transform-style: preserve-3d;
+  padding-bottom: 4px;
 }
 .kd-split-text .split-line div div:nth-child(1) {
   text-transform: capitalize;
@@ -2179,6 +2183,34 @@ input:focus::placeholder, textarea:focus::placeholder {
 */
 /* 
   mobile-menu-css-start
+*/
+/* 
+  spilting-wrating-start
+*/
+.splitting.animated .char {
+  -webkit-animation: fadeInUp 0.4s cubic-bezier(0.3, 0, 0.7, 1) both;
+  animation: fadeInUp 0.4s cubic-bezier(0.3, 0, 0.7, 1) both;
+  -webkit-animation-delay: calc(30ms * var(--char-index));
+  animation-delay: calc(30ms * var(--char-index));
+}
+
+.splitting .whitespace {
+  width: 10px;
+}
+
+/* 
+  spilting-wrating-end
+*/
+/* 
+  img-ani-1-start
+*/
+.kd-img-ani-1 {
+  transition: transform 500ms;
+  transform-origin: center center;
+}
+
+/* 
+  img-ani-1-end
 */
 .kd-home-1-scroll-progress {
   display: block;
@@ -3486,6 +3518,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   padding: 10px 13px;
   border-radius: 20px;
   transform: translateY(-20px);
+  transition: 0.3s var(--cube-1);
 }
 .kd-pop-cat-1-item .title:is(.has-bg-1) {
   background: #db3c2d;
@@ -3495,6 +3528,12 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 .kd-pop-cat-1-item .title:is(.has-bg-1) {
   background: #284edb;
+}
+.kd-pop-cat-1-item .title:hover {
+  color: var(--kd-clr-sd-1);
+}
+.kd-pop-cat-1-item:hover .icon img {
+  animation: 1s kd-jello;
 }
 .kd-pop-cat-1-slider {
   position: relative;
@@ -3554,6 +3593,44 @@ input:focus::placeholder, textarea:focus::placeholder {
   font-size: 16px;
   color: #000;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.kd-slider-btn-1 .icon-1 {
+  display: inline-block;
+  line-height: 1;
+  transition: 0.3s var(--cube-1);
+  opacity: 0;
+  color: #fff;
+}
+.kd-slider-btn-1 .icon-2 {
+  display: inline-block;
+  line-height: 1;
+  transition: 0.3s var(--cube-1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: #000;
+}
+.kd-slider-btn-1:hover {
+  background: var(--kd-clr-pr-1);
+}
+.kd-slider-btn-1:hover .icon-1 {
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+.kd-slider-btn-1:hover .icon-2 {
+  left: -20%;
+}
+.kd-slider-btn-1:is(.has-next):hover .icon-1 {
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+.kd-slider-btn-1:is(.has-next):hover .icon-2 {
+  left: 120%;
 }
 
 .kd-about-1-left {

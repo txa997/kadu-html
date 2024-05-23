@@ -226,6 +226,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 	overflow: hidden;
     perspective: 2000px;
     transform-style: preserve-3d;
+    padding-bottom: 4px;
 	.split-line {
 		div {
 
