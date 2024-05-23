@@ -8,6 +8,74 @@
 "use strict";
 
 
+
+
+// title-animation
+$(window).on('load',function(){
+	var st = $(".ftc-split-text");
+	if(st.length == 0) return;
+	gsap.registerPlugin(SplitText);
+	st.each(function(index, el) {
+	  el.split = new SplitText(el, { 
+		type: "lines,words,chars",
+		linesClass: "split-line"
+	  });
+	
+	  if( $(el).hasClass('ftc-split-threed') ){
+		gsap.set(el.split.chars, {
+		  opacity: 1,
+		  	transformOrigin: "50% 100%",
+		  	transform: "rotateX(90deg)",
+			ease: "elastic.out(1,0.3)",
+			color:'#a249ed',
+			duration: 2.5, 
+		});
+	  }
+	  
+
+	  el.anim = gsap.to(el.split.chars, {
+		scrollTrigger: {
+		  trigger: el,
+		  start: "top 90%",
+		},
+		ease: "elastic.out(1,0.3)",
+		transform: "rotateX(0deg)",
+		color: 'inherit',
+		opacity: 1,
+		duration: 2.5, 
+		stagger: 0.02,
+	  });
+	  
+	});
+})
+
+
+let char_come = gsap.utils.toArray(".title-anim");
+
+  char_come.forEach((char_come) => {
+    let split_char = new SplitText(char_come, {
+      type: "chars, words",
+      lineThreshold: 0.5
+    });
+    const tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: char_come,
+        start: "top 90%",
+        end: "bottom 60%",
+        scrub: false,
+        markers: false,
+        toggleActions: "play none none none"
+      }
+    });
+    tl2.from(split_char.chars, {
+      duration: 0.8,
+      x: 70,
+      autoAlpha: 0,
+      stagger: 0.03
+    });
+  });
+
+
 const lenis = new Lenis({
 	duration: 2,	
 })

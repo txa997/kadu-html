@@ -40,6 +40,7 @@
     font-family: var(--kd-font-sd-1);
     line-height: 1;
     margin-bottom: 5px;
+    text-transform: capitalize;
     color: var(--kd-clr-pr-1);
 
     @media #{$lg,$md,$xs} {

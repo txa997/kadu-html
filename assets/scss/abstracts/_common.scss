@@ -228,11 +228,22 @@ input:focus::placeholder, textarea:focus::placeholder {
     transform-style: preserve-3d;
 	.split-line {
 		div {
+
 			div {
 				&:nth-child(1) {
 					text-transform: capitalize;
 				}
 			}
+		}
+	}
+}
+
+.rtl-home {
+    direction: rtl;
+
+    .split-line {
+		div {
+            direction: ltr;
 		}
 	}
 }

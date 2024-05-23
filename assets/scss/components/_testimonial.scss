@@ -1,4 +1,6 @@
-
+/* 
+    testimonial-1-start
+*/
 
 .kd-testimonial-1 {
     &-area {
@@ -120,6 +122,25 @@
     }
 }
 
+/* 
+    testimonial-1-end
+*/
 
+/* 
+    testimonial-2-start
+*/
+.kd-t-child-1 {
+    &-wrap {
+        background: #f5f4f0;
+        border-radius: 90px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        padding: 50px 70px;
+    }
+}
+/*
+    testimonial-2-end
+*/
 
 
