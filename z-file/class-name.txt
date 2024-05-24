@@ -1,0 +1,11 @@
+kd-img-ani-1
+
+txaa-roteted-1
+
+kd-subtitle-ani-1
+
+kd-title-ani kd-split-text
+
+txaa-fade-right
+
+txaa-fade-left

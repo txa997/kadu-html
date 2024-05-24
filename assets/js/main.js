@@ -264,7 +264,7 @@ txaafadeinright.forEach((box, i) => {
 	const anim = gsap.fromTo(box, {autoAlpha: 0, x: 50}, {duration: 1, autoAlpha: 1, x: 0});
 	ScrollTrigger.create({
 		trigger: box,
-		start: "top 80%",
+		start: "top 85%",
 		animation: anim,
 		toggleActions: 'play none none reverse',
 		once: false,
@@ -275,25 +275,63 @@ txaafadeinleft.forEach((box, i) => {
 	const anim = gsap.fromTo(box, {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0});
 	ScrollTrigger.create({
 		trigger: box,
-		start: "top 80%",
+		start: "top 85%",
 		animation: anim,
 		toggleActions: 'play none none reverse',
 		once: false,
 	});
 });
 
-txaaimg1.forEach((box, i) => {
-	const anim = gsap.fromTo(box, { autoAlpha: 1, transform: "perspective(0px) rotateX(0deg) rotateY(0deg) scaleX(1) scaleY(1)"}, { autoAlpha: 1, transform: "perspective(600px) rotateX(0.06deg) rotateY(0deg) scaleX(1.2) scaleY(1.2)"});
-	ScrollTrigger.create({
-		trigger: box,
-		start: "top 80%",
-		animation: anim,
-		toggleActions: 'play none none reverse',
-		once: false,
-		markers: true
-	});
+// txaa-roteted-1
+gsap.utils.toArray('.txaa-roteted-1').forEach((container, index) => { 
+    let images = gsap.utils.toArray(container.querySelectorAll('img'));
+
+    let tl1 = gsap.timeline({
+        scrollTrigger: {
+            trigger: container,
+			scrub: 1,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+            markers: false
+        }
+    });
+
+    tl1.from(images, {  rotate: 360, duration:1, ease: "circ.out",});
 });
 
+// img-1
+gsap.utils.toArray('.kd-img-ani-1').forEach((container, index) => { 
+    let images = gsap.utils.toArray(container.querySelectorAll('img'));
+
+    let tl1 = gsap.timeline({
+        scrollTrigger: {
+            trigger: container,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+            markers: false
+        }
+    });
+
+    tl1.from(images, { opacity: 0, yPercent: -100,  filter: "blur(30px)", duration:1, ease: "circ.out",});
+});
+
+// subtitle-1
+gsap.utils.toArray('.kd-subtitle-ani-1').forEach((container, index) => { 
+    let images = gsap.utils.toArray(container.querySelectorAll('img'));
+
+    let tl1 = gsap.timeline({
+        scrollTrigger: {
+            trigger: container,
+            start: "top 80%",
+			end: "top 0%",
+			scrub: 1,
+            toggleActions: "play none none reverse",
+            markers: false
+        }
+    });
+
+    tl1.from(images, { rotate: 360, duration:1, ease: "circ.out",});
+});
 
 
 // class-add
