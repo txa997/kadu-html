@@ -257,6 +257,7 @@ $(window).on('load',function(){
 
 
 const txaafadeinright = gsap.utils.toArray('.txaa-fade-right');
+const txaaslideinright = gsap.utils.toArray('.txaa-slide-right');
 const txaafadeinleft = gsap.utils.toArray('.txaa-fade-left');
 
 
@@ -280,6 +281,32 @@ txaafadeinleft.forEach((box, i) => {
 		toggleActions: 'play none none reverse',
 		once: false,
 	});
+});
+
+txaaslideinright.forEach((box, i) => {
+	const anim = gsap.fromTo(box, { xPercent: 100}, {duration: 1, xPercent: 0});
+	ScrollTrigger.create({
+		trigger: box,
+		start: "top 85%",
+		animation: anim,
+		toggleActions: 'play none none reverse',
+		once: false,
+	});
+});
+
+// txaa-slide-down-1
+gsap.utils.toArray('.txaa-slide-down-1').forEach((container, index) => { 
+    let images = gsap.utils.toArray(container.querySelectorAll('.txaa-slide-down-1-item'));
+
+    let tl1 = gsap.timeline({
+        scrollTrigger: {
+            trigger: container,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+        }
+    });
+
+    tl1.from(images, {  opacity:0, yPercent: 100, stagger: 0.2 , duration:1, ease: "circ.out",});
 });
 
 // txaa-roteted-1

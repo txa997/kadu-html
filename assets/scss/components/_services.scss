@@ -65,15 +65,28 @@
         .title {
             font-size: 26px;
             margin-bottom: 16px;
+            transition: .2s var(--cube-1);
+
 
             @media #{$lg,$md,$xs} {
                 font-size: 22px;
+            }
+
+            &:hover {
+                color: var(--kd-clr-sd-1);
+                letter-spacing: .3px;
             }
         }
         
         .disc {
             font-size: 17px;
             line-height: 27px;
+        }
+
+        &:hover {
+            .icon {
+                animation: 1s kd-jello;
+            }
         }
     }
 }

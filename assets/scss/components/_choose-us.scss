@@ -9,23 +9,22 @@
         @media #{$xxl,$xl,$lg,$md,$xs} {
             padding-bottom: 60px;
         }
+    }
 
-        &::after {
-            content: "";
-            width: 77%;
-            height: 360px;
-            background: #241442;
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            border-radius: 158px  0 0 158px;
-            z-index: -1;
+    &-bg-shape {
+        width: 77%;
+        height: 360px;
+        background: #241442;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border-radius: 158px  0 0 158px;
+        z-index: -1;
 
-            @media #{$md,$xs} {
-                width: 100%;
-                height: 500px;
-                border-radius: 0;
-            }
+        @media #{$md,$xs} {
+            width: 100%;
+            height: 500px;
+            border-radius: 0;
         }
     }
 
@@ -147,6 +146,14 @@
             font-size: 17px;
             line-height: 27px;
             color: #9192a6;
+        }
+
+        &:hover {
+            .icon {
+                img {
+                    animation: 1s kd-jello;
+                }
+            }
         }
     }
 

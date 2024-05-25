@@ -64,6 +64,14 @@
             flex: 0 0 auto;
             width: 35%;
             opacity: .5;
+            transition: .3s var(--cube-1);
+        }
+
+        &:hover {
+            img {
+                animation: 1s kd-jello;
+                opacity: 1;
+            }
         }
     }
 }

@@ -9,3 +9,5 @@ kd-title-ani kd-split-text
 txaa-fade-right
 
 txaa-fade-left
+
+txaa-slide-down-1

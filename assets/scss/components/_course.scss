@@ -53,6 +53,10 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+
+                transition: transform 500ms;
+                transform: perspective(0px) rotateX(0deg) rotateY(0deg) scaleX(1) scaleY(1);
+                transform-origin: center center;
             }
         }
 
@@ -82,9 +86,16 @@
         .title {
             font-size: 25px;
             margin-bottom: 9px;
+            transition: .2s var(--cube-1);
+            transform-origin: left;
 
             @media #{$xxl,$xl,$lg,$md,$xs} {
                 font-size: 22px;
+            }
+
+            &:hover {
+                color: var(--kd-clr-sd-1);
+                transform: scaleX(102%);
             }
         }
 
@@ -194,6 +205,14 @@
         
         .right {
             transform: translateY(-5px);
+        }
+
+        &:hover {
+            .main-img {
+                img {
+                    transform: perspective(600px) rotateX(0.06deg) rotateY(0deg) scaleX(1.15) scaleY(1.15);
+                }
+            }
         }
         
     }
