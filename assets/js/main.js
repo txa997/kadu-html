@@ -9,7 +9,7 @@
 
 
 const lenis = new Lenis({
-	duration: 2,	
+	duration: 1.5,	
 })
 
 // smoooth scroll activation start
@@ -258,7 +258,7 @@ $(window).on('load',function(){
 
 const txaafadeinright = gsap.utils.toArray('.txaa-fade-right');
 const txaafadeinleft = gsap.utils.toArray('.txaa-fade-left');
-const txaaimg1 = gsap.utils.toArray('.kd-img-ani-1');
+
 
 txaafadeinright.forEach((box, i) => {
 	const anim = gsap.fromTo(box, {autoAlpha: 0, x: 50}, {duration: 1, autoAlpha: 1, x: 0});
@@ -521,6 +521,16 @@ if($('.kd-client-2-active').length) {
 	});
 }
   
+
+
+/* 
+ 	price-1-active-class
+*/
+$(".kd-price-1-table-feature-item").on("click", function(){
+	var current_class = document.getElementsByClassName("kd-price-1-table-feature-item active");
+	current_class[0].className = current_class[0].className.replace(" active", "");
+	this.className += " active";
+});
 
 
 

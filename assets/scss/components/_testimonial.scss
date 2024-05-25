@@ -129,7 +129,17 @@
 /* 
     testimonial-2-start
 */
+
+
 .kd-t-child-1 {
+
+    &-area {
+        margin-top: -70px;
+        position: relative;
+        z-index: 1;
+    }
+
+
     &-wrap {
         background: #f5f4f0;
         border-radius: 90px;
@@ -137,8 +147,146 @@
         grid-template-columns: 1fr 1fr;
         gap: 60px;
         padding: 50px 70px;
+
+        @media #{$xl} {
+            border-radius: 70px;
+            gap: 40px;
+            padding: 50px 40px;
+        }
+
+        @media #{$lg} {
+            border-radius: 30px;
+            gap: 30px;
+            padding: 50px 40px;
+        }
+
+        @media #{$md} {
+            border-radius: 50px;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            padding: 50px 40px;
+        }
+
+        @media #{$xs} {
+            border-radius: 50px;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            padding: 50px 20px;
+        }
+
+        @media #{$sm} {
+            border-radius: 50px;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            padding: 50px 40px;
+        }
+    }
+
+    &-content {
+        .title {
+            font-size: 38px;
+            line-height: 1.31;
+            margin-bottom: 17px;
+
+            @media #{$lg,$md,$xs} {
+                font-size: 30px;
+            }
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            margin-bottom: 18px;
+        }
+        
+    }
+
+    &-brand {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+
+        .item {
+            width: 140px;
+        }
+    }
+
+    &-reating {
+        &-item-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            align-items: start;
+
+            @media #{$xs} {
+                grid-template-columns: 1fr ;
+            }
+
+            @media #{$sm} {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        &-item {
+            background: #fff;
+            border-radius: 60px;
+            padding: 50px 50px;
+            padding-bottom: 35px;
+
+
+
+            @media #{$xl} {
+                padding: 50px 30px;
+                padding-bottom: 35px;
+            }
+
+            @media #{$lg} {
+                padding: 50px 20px;
+                padding-bottom: 35px;
+            
+            }
+            @media #{$xs} {
+                padding: 50px 20px;
+                padding-bottom: 35px;
+            
+            }
+        
+            .number {
+                font-size: 75px;
+                line-height: 1;
+                margin-bottom: 17px;
+            }
+        
+            .reating {
+                font-size: 15px;
+                line-height: 1;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                color: #fc462b;
+                margin-bottom: 17px;
+
+                &:is(.has-clr-yollow) {
+                    color: #F69900;
+                }
+            }
+            .title {
+                font-size: 20px;
+                margin-bottom: 0px;
+            }
+            
+            .disc {
+                font-size: 15px;
+                font-weight: 500;
+                text-transform: capitalize;
+                color: #282828;
+            }
+        }
     }
 }
+
+
+
 /*
     testimonial-2-end
 */

@@ -1,4 +1,9 @@
 
+/* 
+    about-1-start
+*/
+
+
 .kd-about-1 {
     &-left {
         padding-right: 15px;
@@ -141,33 +146,92 @@
     }
 }
 
+/* 
+    about-1-end
+*/
+
+/* 
+    about-2-start
+*/
+.kd-about-2 {
+
+    &-area {
+        position: relative;
+        z-index: 1;
+    }
+
+    &-bg-il {
+        width: 13%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+    
+
+    &-scn-title {
+        .kd-subtitle-1 {
+            margin-bottom: 25px;
+        }
+    }
+
+    &-left {
+        position: relative;
+        z-index: 1;
+    }
+
+    &-img {
+        &-1 {
+            max-width: 385px;
+            border-radius: 60px;
+            height: 400px;
+            margin-left: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        &-2 {
+            max-width: 495px;
+            height: 420px;
+            border-radius: 60px;
+            margin-top: -195px;
+        }
+
+        &-certified {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            z-index: 1;
+        }
+
+        &-il-1 {
+            position: absolute;
+            bottom: 140px;
+            right: 0;
+        }
+    }
+
+    &-right {
+        padding-left: 45px;
+        padding-top: 40px;
+
+        @media #{$lg} {
+            padding-left: 15px;
+        }
+
+        @media #{$md,$xs} {
+            padding-left: 0px;
+        }
+
+        .contact-item-flex {
+            display: flex;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+    }
 
 
-// @import url("https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap");
-// body {
-//   font-family: "Signika Negative", sans-serif;
-//   font-weight: 300;
-//   margin: 0;
-//   padding: 0 20px;
-// }
-
-
-
-// .swiper-container {
-//   height: 500px;
-
-//   .swiper-slide {
-//     background: #ddd;
-//   }
-// }
-// .swiper__title {
-//   height: 100%;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   opacity: 0;
-// }
-// .swiper__title h2 {
-//   font-size: 3rem;
-
-// }
+}
+/* 
+    about-2-end
+*/

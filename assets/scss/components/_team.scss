@@ -1,0 +1,136 @@
+.kd-team-1 {
+    &-membar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 40px;
+        align-items: end;
+        padding-bottom: 30px;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 30px;
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &::after {
+            content: "";
+            width: 75%;
+            height: 73%;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background: #f2f2f2;
+            z-index: -1;
+            border-radius: 20px;
+
+            @media #{$lg} {
+                height: 100%; 
+            }
+
+            @media #{$xs} {
+                width: 100%; 
+                height: 100%; 
+            }
+
+            @media #{$sm} {
+                height: 85%; 
+                width: 75%;
+            }
+        }
+
+        &::before {
+            content: "";
+            width: 42px;
+            height: 73%;
+            position: absolute;
+            left: 13%;
+            bottom: 0;
+            background: var(--kd-clr-pr-1);
+            z-index: -1;
+            border-radius: 20px;
+        }
+
+        .main-img {
+            border-radius: 20px;
+        }
+
+        .content {
+            @media #{$xs} {
+                padding: 0 20px;
+            }
+            @media #{$sm} {
+                padding: 0 0px;
+            }
+        }
+
+        .membar {
+            font-size: 30px;
+            margin-bottom: 6px;
+            transition: .3s var(--cube-1);
+
+            @media #{$lg,$md,$xs} {
+                font-size: 24px;
+            }
+
+            &:hover {
+                color: var(--kd-clr-sd-1);
+            }
+        }
+        
+        .membar-bio {
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+
+        .membar-link {
+            li {
+                font-family: var(--kd-font-pr-1);
+                font-weight: 800;
+                color: var(--kd-clr-h-1);
+                font-size: 16px;
+                background: #fff;
+                border-radius: 21px;
+                padding: 4px 9px;
+                display: inline-block;
+
+                &:not(:last-child) {
+                    margin-bottom: 8px;
+                }
+
+                .icon {
+                    width: 36px;
+                    height: 36px;
+                    background: var(--kd-clr-pr-1);
+                    border-radius: 50%;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #fff;
+                    font-size: 14px;
+                    margin-right: 5px;
+                }
+
+                a {
+                    display: inline-block;
+                    transition: .3s var(--cube-1);
+
+                    &:hover {
+                        color: var(--kd-clr-sd-1);
+                    }
+                }
+
+                &:hover {
+                    .icon {
+                        animation: 1s kd-jello;
+                    }
+                }
+            }
+        }
+    }
+}
+
