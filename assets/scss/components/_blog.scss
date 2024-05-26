@@ -24,6 +24,11 @@
 
         .main-img {
             height: 265px;
+            img {
+                transition: transform 500ms;
+                transform: perspective(0px) rotateX(0deg) rotateY(0deg) scaleX(1) scaleY(1);
+                transform-origin: center center;
+            }
         }
         
         .author-img {
@@ -76,6 +81,8 @@
             font-size: 27px;
             line-height: 1.29;
             margin-bottom: 5px;
+            transform-origin: left;
+            transition: .2s var(--cube-1);
 
             @media #{$xl} {
                 font-size: 24px;
@@ -84,6 +91,11 @@
             @media #{$lg,$md,$xs} {
                 font-size: 22px;
             }
+
+            &:hover {
+                color: var(--kd-clr-sd-1);
+                transform: scaleX(103%);
+            }
         }
         
         .card-disc {
@@ -91,6 +103,15 @@
             font-size: 19px;
             line-height: 27px;
             color: #797a84;
+        }
+
+        &:hover {
+            .main-img {
+                img {
+                    transform: perspective(600px) rotateX(0.06deg) rotateY(0deg) scaleX(1.15) scaleY(1.15);
+                    
+                }
+            }
         }
 
     }

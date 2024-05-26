@@ -74,11 +74,25 @@
             font-size: 15px;
             line-height: 1;
             margin-bottom: 5px;
+
+
         }
 
         .action-link {
             font-size: 25px;
             line-height: 1;
+            transition: .2s var(--cube-1);
+
+            &:hover {
+                color: var(--kd-clr-sd-1);
+                letter-spacing: .5px;
+            }
+        }
+
+        &:hover {
+            .icon {
+                animation: 1s kd-jello;
+            }
         }
         
     }

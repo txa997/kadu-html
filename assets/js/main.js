@@ -259,6 +259,7 @@ $(window).on('load',function(){
 const txaafadeinright = gsap.utils.toArray('.txaa-fade-right');
 const txaaslideinright = gsap.utils.toArray('.txaa-slide-right');
 const txaafadeinleft = gsap.utils.toArray('.txaa-fade-left');
+const txaascaleup = gsap.utils.toArray('.txaa-scale-up');
 
 
 txaafadeinright.forEach((box, i) => {
@@ -273,7 +274,7 @@ txaafadeinright.forEach((box, i) => {
 });
 
 txaafadeinleft.forEach((box, i) => {
-	const anim = gsap.fromTo(box, {autoAlpha: 0, x: -50}, {duration: 1, stagger: 0.2 , autoAlpha: 1, x: 0});
+	const anim = gsap.fromTo(box, {autoAlpha: 0,  x: -50}, {duration: 1, stagger: 0.2 , autoAlpha: 1, x: 0});
 	ScrollTrigger.create({
 		trigger: box,
 		start: "top 85%",
@@ -285,6 +286,17 @@ txaafadeinleft.forEach((box, i) => {
 
 txaaslideinright.forEach((box, i) => {
 	const anim = gsap.fromTo(box, { xPercent: 100}, {duration: 1, xPercent: 0});
+	ScrollTrigger.create({
+		trigger: box,
+		start: "top 85%",
+		animation: anim,
+		toggleActions: 'play none none reverse',
+		once: false,
+	});
+});
+
+txaascaleup.forEach((box, i) => {
+	const anim = gsap.fromTo(box, { scale: .5}, {duration: 1, scale: 1});
 	ScrollTrigger.create({
 		trigger: box,
 		start: "top 85%",
