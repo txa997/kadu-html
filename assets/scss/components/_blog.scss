@@ -1,4 +1,6 @@
-
+/* 
+    blog-1-start
+*/
 .kd-blog-1 {
     &-area {
         position: relative;
@@ -99,7 +101,104 @@
 }
 
 
+/* 
+    blog-1-end
+*/
 
+/* 
+    blog-2-start
+*/
+.kd-blog-2-card {
+    box-shadow: 0px 7px 81px 0px rgba(32, 28, 29, 0.07);
+    border-radius: 20px;
+    background: #fff;
+    margin-bottom: 30px;
+
+    &-author {
+        padding: 20px 30px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        flex-wrap: wrap;
+
+        
+        .author-img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            flex: 0 0 auto;
+        }
+
+        .author-name {
+            font-size: 18px;
+        }
+
+        .author-love {
+            font-size: 16px;
+            margin-left: auto;
+        }
+    }
+    
+    .main-img {
+        height: 265px;
+
+        img {
+            transition: transform 500ms;
+            transform: perspective(0px) rotateX(0deg) rotateY(0deg) scaleX(1) scaleY(1);
+            transform-origin: center center;
+        }
+    }
+
+    .card-title {
+        font-size: 27px;
+        line-height: 1.29;
+        transition: .2s var(--cube-1);
+        transform-origin: left;
+        margin-bottom: 8px;
+
+        @media #{$lg,$md,$xs} {
+            font-size: 24px;
+        }
+
+        &:hover {
+            color: var(--kd-clr-sd-1);
+            transform: scaleX(103%);
+            -webkit-transform: scaleX(103%);
+            -moz-transform: scaleX(103%);
+            -ms-transform: scaleX(103%);
+            -o-transform: scaleX(103%);
+        }
+
+    }
+
+    .card-content {
+        padding: 35px 50px;
+
+        @media #{$xl,$lg,$md,$xs} {
+            padding: 35px 20px;
+        }
+    }
+
+    .card-disc {
+        font-size: 19px;
+        line-height: 26px;
+        font-weight: 600;
+        color: #797a84;
+    }
+
+    &:hover {
+        .main-img {
+            img {
+                transform: perspective(600px) rotateX(0.06deg) rotateY(0deg) scaleX(1.15) scaleY(1.15);
+            }
+        }
+    }
+}
+
+
+/* 
+    blog-2-end
+*/
 
 
 

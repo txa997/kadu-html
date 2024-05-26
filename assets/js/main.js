@@ -262,7 +262,7 @@ const txaafadeinleft = gsap.utils.toArray('.txaa-fade-left');
 
 
 txaafadeinright.forEach((box, i) => {
-	const anim = gsap.fromTo(box, {autoAlpha: 0, x: 50}, {duration: 1, autoAlpha: 1, x: 0});
+	const anim = gsap.fromTo(box, {autoAlpha: 0, x: 50}, {duration: 1, stagger: 0.2 , autoAlpha: 1, x: 0});
 	ScrollTrigger.create({
 		trigger: box,
 		start: "top 85%",
@@ -273,7 +273,7 @@ txaafadeinright.forEach((box, i) => {
 });
 
 txaafadeinleft.forEach((box, i) => {
-	const anim = gsap.fromTo(box, {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0});
+	const anim = gsap.fromTo(box, {autoAlpha: 0, x: -50}, {duration: 1, stagger: 0.2 , autoAlpha: 1, x: 0});
 	ScrollTrigger.create({
 		trigger: box,
 		start: "top 85%",
@@ -677,48 +677,22 @@ $('.parallax-img').parallaxie({
 	speed: 0.5,    
 });
 
+/*mouse-over-scale*/
+if($('.txaa-tilt_scale').length) {
+	$('.txaa-tilt_scale').tilt({
+		glare: false,
+		maxGlare: .5
+	})
+}
 
-// gsap.registerPlugin(SplitText);
+if($('.txaa-tilt_glare').length) {
+	$('.txaa-tilt_glare').tilt({
+		glare: true,
+		maxGlare: .5
+	})
+}
 
-// var swiper = new Swiper("#post__slider .swiper-container", {
-//   effect: "fade",
-//   speed: 1000,
-//   watchSlidesVisibility: true,
-//   autoplay: {
-//     delay: 10000,
-//     disableOnInteraction: false
-//   },
-//   allowTouchMove: true,
-//   loop: true,
-//   runCallbacksOnInit: true,
-//   on: {
-//     slideChangeTransitionStart: function () {
-//       splitTextFunction(this.$el);
-//     }
-//   }
-// });
 
-// function splitTextFunction(sliderDOM) {
-//   const slideActive = sliderDOM.find(".swiper-slide-active");
-//   const slideCaption = slideActive.find(".swiper__title");
-//   const oldActive = sliderDOM.find(".swiper-slide-prev, .swiper-slide-prev");
-//   const oldCaption = oldActive.find(".swiper__title");
 
-//   gsap.set(slideCaption, { autoAlpha: 1 });
-//   const split = new SplitText(slideActive[0].querySelector("h2"), { type: "words,chars" });
-  
-//   gsap.from(split.chars, {
-//     opacity: 0,
-//     y: 50,
-//     ease: "back",
-//     stagger: {
-//       from: "start",
-//       each: 0.05
-//     },
-//     onComplete: function() {
-//       split.revert();
-//     }
-//   });
-// }
 
 })(jQuery);

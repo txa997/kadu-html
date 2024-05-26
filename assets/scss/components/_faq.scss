@@ -1,0 +1,58 @@
+
+
+
+
+.kd-accordion-1 {
+
+    
+    &-item {
+        background: #064745;
+        border-radius: 30px;
+
+        .item-title {
+            font-size: 20px;
+            background: #085653;
+            text-align: left;
+            display: flex;
+            gap: 15px;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 15px;
+            padding-left: 40px;
+            border-radius: 30px;
+            color: #fff;
+
+            .icon {
+                display: inline-flex;
+                flex: 0 0 auto;
+                width: 42px;
+                height: 42px;
+                background: #5f8f87;
+                border-radius: 50%;
+                justify-content: center;
+                align-items: center;
+                line-height: 1;
+                color: #fff;
+            }
+
+            &:hover {
+                color: #fff;
+            }
+
+        }
+        
+        .item-body {
+            .disc  {
+                font-size: 18px;
+                line-height: 32px;
+                padding-left: 70px;
+                padding-bottom: 15px;
+                padding-top: 15px;
+                padding-right: 45px;
+            }
+        }
+    }
+
+    
+}

@@ -1,3 +1,7 @@
+/* 
+    team-1-start
+*/
+
 .kd-team-1 {
     &-membar {
         display: grid;
@@ -57,6 +61,12 @@
 
         .main-img {
             border-radius: 20px;
+
+            img {
+                transition: transform 500ms;
+                transform: perspective(0px) rotateX(0deg) rotateY(0deg) scaleX(1) scaleY(1);
+                transform-origin: center center;
+            }
         }
 
         .content {
@@ -71,7 +81,8 @@
         .membar {
             font-size: 30px;
             margin-bottom: 6px;
-            transition: .3s var(--cube-1);
+            transition: .2s var(--cube-1);
+            transform-origin: left;
 
             @media #{$lg,$md,$xs} {
                 font-size: 24px;
@@ -79,6 +90,7 @@
 
             &:hover {
                 color: var(--kd-clr-sd-1);
+                transform: scaleX(103%);
             }
         }
         
@@ -131,6 +143,17 @@
                 }
             }
         }
+
+        &:hover {
+            .main-img {
+                img {
+                    transform: perspective(600px) rotateX(0.06deg) rotateY(0deg) scaleX(1.15) scaleY(1.15);
+                }
+            }
+        }
     }
 }
 
+/* 
+    team-1-end
+*/
