@@ -431,7 +431,7 @@
           text-transform: uppercase;
 
           &:is(.is-active) {
-              color: var(--kd-clr-pr-1);
+              color: var(--kd-clr-sd-1);
           }
         }
 
@@ -455,7 +455,7 @@
 
             &:hover {
               > a {
-                color: var(--kd-clr-pr-1);
+                color: var(--kd-clr-sd-1);
               }
             }
           }
@@ -464,7 +464,7 @@
 
         &:hover {
           a {
-            color: var(--kd-clr-pr-1);
+            color: var(--kd-clr-sd-1);
           }
         }
 

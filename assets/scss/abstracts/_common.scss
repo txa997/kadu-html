@@ -220,6 +220,21 @@ input:focus::placeholder, textarea:focus::placeholder {
     z-index: 1;
 }
 
+.kd-h2-split-text {
+	text-transform: unset !important;
+	overflow: hidden;
+	.split-line {
+		div {
+
+			div {
+				&:nth-child(1) {
+					text-transform: capitalize;
+				}
+			}
+		}
+	}
+}
+
 .kd-split-text {
 	text-transform: unset !important;
 	letter-spacing: -.5px;

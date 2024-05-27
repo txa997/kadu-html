@@ -1,4 +1,81 @@
 
+.kd-home-1 {
+  position: relative;
+  z-index: 1;
+
+  &-bg-line {
+      display: flex;
+      justify-content: space-around;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+
+      &-single {
+        display: block;
+        width: 1px;
+        height: 100%;
+        background: #F3F5FF;
+        position: relative;
+
+        &::after {
+          content: "";
+          width: 5px;
+          height: 23px;
+          border-radius: 2.5px;
+          background-color: #656ae5;
+          position: absolute;
+          top: 0;
+          left: -2px;
+
+          animation: kd-home-1-bg 80s linear infinite;
+        
+        }
+
+        &:nth-child(1) {
+          &::after {
+            animation-delay: 1s;
+          }
+        }
+
+        &:nth-child(3) {
+          &::after {
+            animation-delay: 2s;
+          }
+
+        }
+
+        &:nth-child(4) {
+          &::after {
+            animation-delay: .5s;
+          }
+
+        }
+
+        &:nth-child(5) {
+          &::after {
+            animation-delay: 1.5s;
+          }
+
+        }
+      }
+  }
+}
+
+@keyframes kd-home-1-bg {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
 /* 
   spilting-wrating-start
 */

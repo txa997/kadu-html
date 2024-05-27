@@ -55,6 +55,18 @@
         .kd-slider-btn-1 {
             background: #363539;
             color: #fff;
+
+            .icon-1 {
+                color: #fff;
+            }
+
+            .icon-2 {
+                color: #fff;
+            }
+            
+            &:hover {
+                background: var(--kd-clr-sd-1);
+            }
         }
 
         .kd_video-course_1_slider_next {

@@ -37,59 +37,72 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		Splitting();
 
-		// h1-h1-start
-		var swiper = new Swiper(".kd-hero-1-active", {
-			effect: "fade",
-			watchSlidesVisibility: true,
-			autoplay: {
-				delay: 30000,
-				disableOnInteraction: false
-			},
-			allowTouchMove: true,
-			loop: true,
-			runCallbacksOnInit: true,
-			fadeEffect: {
-				crossFade: true
-			},
-			navigation: {
-				nextEl: ".kd_hero_1_next",
-				prevEl: ".kd_hero_1_prev",
-			},
-			on: {
-				slideChangeTransitionStart: function () {
-					splitTextFunction(this.el);
-				}
-			}
-		});
-
-		function splitTextFunction(sliderDOM) {
-			const slideActive = sliderDOM.querySelector(".swiper-slide-active");
-			const slideCaption = slideActive.querySelector(".kd-hero-1-item-content .title");
-			const oldActive = sliderDOM.querySelectorAll(".swiper-slide-prev, .swiper-slide-duplicate-prev");
-			const oldCaptions = Array.from(oldActive).map(slide => slide.querySelector(".kd-hero-1-item-content .title"));
-
-			gsap.set(oldCaptions, { autoAlpha: 0 });
-			gsap.set(slideCaption, { autoAlpha: 1 });
-			const split = new SplitText(slideCaption, { type: "words,chars" });
-
-			gsap.from(split.chars, {
-				opacity: 0,
-				y: 50,
-				ease: "back",
-				duration: .5,
-				delay: 1,
-				stagger: {
-					from: "start",
-					each: 0.05
+		// h1-start
+		if($('.kd-hero-1-active').length) {
+			var swiper = new Swiper(".kd-hero-1-active", {
+				effect: "fade",
+				watchSlidesVisibility: true,
+				autoplay: {
+					delay: 30000,
+					disableOnInteraction: false
 				},
-				onComplete: function() {
-					split.revert();
+				allowTouchMove: true,
+				loop: true,
+				runCallbacksOnInit: true,
+				fadeEffect: {
+					crossFade: true
+				},
+				navigation: {
+					nextEl: ".kd_hero_1_next",
+					prevEl: ".kd_hero_1_prev",
+				},
+				on: {
+					slideChangeTransitionStart: function () {
+						splitTextFunction(this.el);
+					}
 				}
 			});
+	
+			function splitTextFunction(sliderDOM) {
+				const slideActive = sliderDOM.querySelector(".swiper-slide-active");
+				const slideCaption = slideActive.querySelector(".kd-hero-1-item-content .title");
+				const oldActive = sliderDOM.querySelectorAll(".swiper-slide-prev, .swiper-slide-duplicate-prev");
+				const oldCaptions = Array.from(oldActive).map(slide => slide.querySelector(".kd-hero-1-item-content .title"));
+	
+				gsap.set(oldCaptions, { autoAlpha: 0 });
+				gsap.set(slideCaption, { autoAlpha: 1 });
+				const split = new SplitText(slideCaption, { type: "words,chars" });
+	
+				gsap.from(split.chars, {
+					opacity: 0,
+					y: 50,
+					ease: "back",
+					duration: .5,
+					delay: 1,
+					stagger: {
+						from: "start",
+						each: 0.05
+					},
+					onComplete: function() {
+						split.revert();
+					}
+				});
+			}
+			splitTextFunction(document.querySelector(".kd-hero-1-active"));
 		}
-		splitTextFunction(document.querySelector(".kd-hero-1-active"));
 
 
+
+		// h2-start
+		const kdh2tl = gsap.timeline();
+
+		kdh2tl.from(".kd-hero-2-content .kd-subtitle-1 " , {  x: 100 , duration:1, ease: "easeInOut", opacity:0 , delay: 1.5 })
+		      .from(".kd-hero-2-content .disc " , {  x: 100 , duration:1, ease: "easeInOut", opacity:0  }, "<.5")
+		      .from(".kd-hero-2-img " , {  duration:1, ease: "easeInOut", stagger: .2, opacity:0  }, "<.5")
+		      .from(".kd-hero-2-img " , { borderRadius: "0", duration:1, ease: "easeInOut", } , "<1")
+		      .from(".kd-hero-2-form " , {  x: -100 , duration:1, ease: "easeInOut", opacity:0 }, "<.5")
+			
+		
 	})
 
 });
@@ -215,6 +228,46 @@ if (menuToggle2) {
 	
 }
 
+// hero-2-start
+$(window).on('load',function(){
+	var st = $(".kd-h2-split-text");
+
+	if(st.length == 0) return; gsap.registerPlugin(SplitText); st.each(function(index, el) {
+
+	  el.split = new SplitText(el, { 
+		type: "lines,words,chars",
+		linesClass: "split-line"
+	  });
+
+	  gsap.set(el, { perspective: 400 });
+	
+	  if( $(el).hasClass('kd-h2-title-ani') ){
+		gsap.set(el.split.chars, {
+		  opacity: 1,
+		  color:'#005e4f',
+		  x: "50",
+		  ease: "Back.easeOut",
+		});
+	  }
+	  
+	
+	  el.anim = gsap.to(el.split.chars, {
+		scrollTrigger: {
+		  trigger: el,
+		  start: "top 90%",
+		},
+		x: "0",
+		y: "0",
+		color: 'inherit',
+		opacity: 1,
+		duration: 1, 
+		stagger: 0.02,
+		delay: .5
+	  });
+
+	});
+})
+
 // title-start
 $(window).on('load',function(){
 	var st = $(".kd-split-text");
@@ -260,6 +313,7 @@ const txaafadeinright = gsap.utils.toArray('.txaa-fade-right');
 const txaaslideinright = gsap.utils.toArray('.txaa-slide-right');
 const txaafadeinleft = gsap.utils.toArray('.txaa-fade-left');
 const txaascaleup = gsap.utils.toArray('.txaa-scale-up');
+const txaascalexup = gsap.utils.toArray('.txaa-scalex-up');
 
 
 txaafadeinright.forEach((box, i) => {
@@ -297,6 +351,17 @@ txaaslideinright.forEach((box, i) => {
 
 txaascaleup.forEach((box, i) => {
 	const anim = gsap.fromTo(box, { scale: .5}, {duration: 1, scale: 1});
+	ScrollTrigger.create({
+		trigger: box,
+		start: "top 85%",
+		animation: anim,
+		toggleActions: 'play none none reverse',
+		once: false,
+	});
+});
+
+txaascalexup.forEach((box, i) => {
+	const anim = gsap.fromTo(box, { scaleX: 0, transformOrigin: "center" }, {duration: 3, scaleX: 1});
 	ScrollTrigger.create({
 		trigger: box,
 		start: "top 85%",
@@ -387,6 +452,25 @@ txaaddclass.forEach(img => {
 		}
 	});
 });
+
+
+// price-1
+var kdprice1 = gsap.timeline({
+
+	scrollTrigger: {
+	  animation: kdprice1,
+	  trigger: '.kd-price-1-area',
+	  start: "top 80%",
+	  end: "top 50%",
+	  scrub: 2,
+	  toggleActions: "play reverse play reverse",
+	  markers: false
+	}
+});
+	
+kdprice1.from(".kd-price-1-bg-img" , {     height: "calc(100% - 0px)" ,  duration:1 })
+
+
 
 // popular-category-1-slider
 if($('.kd-pop-cat-1-active').length) {
