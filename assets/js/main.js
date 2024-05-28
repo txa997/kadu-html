@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				effect: "fade",
 				watchSlidesVisibility: true,
 				autoplay: {
-					delay: 30000,
+					delay: 6000,
 					disableOnInteraction: false
 				},
 				allowTouchMove: true,
@@ -91,8 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			splitTextFunction(document.querySelector(".kd-hero-1-active"));
 		}
 
-
-
 		// h2-start
 		const kdh2tl = gsap.timeline();
 
@@ -101,6 +99,17 @@ document.addEventListener("DOMContentLoaded", function () {
 		      .from(".kd-hero-2-img " , {  duration:1, ease: "easeInOut", stagger: .2, opacity:0  }, "<.5")
 		      .from(".kd-hero-2-img " , { borderRadius: "0", duration:1, ease: "easeInOut", } , "<1")
 		      .from(".kd-hero-2-form " , {  x: -100 , duration:1, ease: "easeInOut", opacity:0 }, "<.5")
+
+
+		// h2-start
+		const kdh3tl = gsap.timeline();
+
+		kdh3tl.from(".kd-hero-3-img " , {  yPercent: 100 , duration:1, ease: "easeInOut", opacity:0 , stagger: .5, delay: 1})
+			  .from(".kd-hero-3-il-1 " , {  scale: 1.5 , duration:.5, ease: "easeInOut", opacity:0})
+			  .from(".kd-hero-3-il-2 " , {  scale: 1.5 , duration:.5, ease: "easeInOut", opacity:0})
+			  .from(".kd-hero-3-il-3 " , {  scale: 1.5 , duration:.5, ease: "easeInOut", opacity:0})
+			  .from(".kd-hero-3-il-4 " , {  scale: 1.5 , duration:.4, ease: "easeInOut", opacity:0})
+		     
 			
 		
 	})

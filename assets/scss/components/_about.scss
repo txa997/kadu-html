@@ -235,3 +235,62 @@
 /* 
     about-2-end
 */
+/* 
+    about-3-start
+*/
+.kd-about-3 {
+    &-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px 120px;
+        align-items: center;
+
+        @media #{$lg} {
+            gap: 50px 100px;
+        }
+
+        @media #{$md,$xs} {
+            grid-template-columns: 1fr ;
+        }
+    }
+
+    &-img-wrap {
+        position: relative;
+        z-index: 1;
+    }
+
+    &-img {
+        height: 575px;
+        border-radius: 20px;
+    }
+
+    &-img-2 {
+        width: 280px;
+        height: 300px;
+        border-radius: 20px;
+        position: absolute;
+        right: -60px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @media #{$md,$xs} {
+            right: 0px; 
+        }
+    }
+
+    &-content {
+        .kd-list-1 {
+            margin-bottom: 40px;
+
+            @media #{$lg,md,$xs} {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+    
+}
+
+
+/* 
+    about-3-end
+*/

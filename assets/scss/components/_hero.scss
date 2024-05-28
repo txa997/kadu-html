@@ -554,4 +554,201 @@
     hero-2-end
 */
 
+/* 
+    hero-3-start
+*/
+
+.kd-hero-3 {
+    &-area {
+        padding-top: 290px;
+        padding-bottom: 260px;
+        clip-path: polygon(0 0, 100% 0, 100% 91%, 0% 100%);
+
+        @media #{$md,$xs} {
+            padding-top: 230px;
+        }
+
+    }
+
+    &-row {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 60px;
+        align-items: center;
+
+        @media #{$lg} {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media #{$md,$xs} {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+    }
+
+    &-content {
+        .title {
+            font-size: 65px;
+            line-height: 1.09;
+            color: #fff;
+            margin-bottom: 14px;
+
+            @media #{$xl} {
+                font-size: 56px;
+            }
+
+            @media #{$lg} {
+                font-size: 54px;
+            }
+
+            @media #{$md} {
+                font-size: 52px;
+            }
+
+            @media #{$xs} {
+                font-size: 35px;
+            }
+
+            @media #{$sm} {
+                font-size: 45px;
+            }
+        }
+        .disc {
+            color: #afb0b5;
+            margin-bottom: 27px;
+        }
+        .subtitle {
+            margin-bottom: 30px;
+        }
+    }
+
+    &-right {
+        position: relative;
+        z-index: 1;
+    }
+
+    &-img {
+        &-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 11px;
+        }
+
+        border-radius: 160px;
+        height: 605px;
+        @media #{$xs} {
+            height: 405px;
+        }
+
+        &:nth-child(2) {
+            height: 520px;
+            margin-top: -30px;
+            @media #{$xs} {
+                height: 355px;
+            }
+        }
+    }
+    
+    &-il {
+        &-1 {
+            width: 28%;
+            position: absolute;
+            left: 36%;
+            transform: translateX(-50%);
+            top: 32%;
+
+            @media #{$xs} {
+                display: none;
+            }
+        }
+
+        &-2 {
+            width: 150px;
+            height: 60px;
+            border-radius: 30px;
+            overflow: hidden;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            position: absolute;
+            bottom: 130px;
+            left: -50px;
+
+            @media #{$xs} {
+                display: none;
+            }
+        }
+
+        &-3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            border-radius: 30px;
+            background: #fff;
+            max-width: 125px;
+            height: 58px;
+            overflow: hidden;
+            position: absolute;
+            bottom: 55px;
+            left: -45px;
+
+            @media #{$xs} {
+                display: none;
+            }
+        }
+
+        &-4 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background: #fff;
+            border-radius: 50px;
+            max-width: 212px;
+            height: 96px;
+            overflow: hidden;
+            position: absolute;
+            bottom: -15px;
+            left: 26%;
+            transform: translateX(-50%);
+
+            @media #{$xs} {
+                display: none;
+            }
+        }
+
+        &-5 {
+            width: 29%;
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            z-index: -1;
+
+            @media #{$xs} {
+                display: none;
+            }
+        }
+
+        &-6 {
+            width: 40%;
+            position: absolute;
+            bottom: 60px;
+            right: -100px;
+            z-index: -1;
+
+            @media #{$xs} {
+                display: none;
+            }
+        }
+    }
+}
+
+
+/* 
+    hero-3-end
+*/
+
 
