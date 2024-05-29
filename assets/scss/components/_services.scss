@@ -191,15 +191,146 @@
     
 }
 
+/* 
+    services-2-end
+*/
 
+/* 
+    services-3-start
+*/
+.kd-services-3 {
+    &-item {
+        border-radius: 25px;
+        box-shadow: 0px 7px 54px 0px rgba(32, 28, 29, 0.05);
+        text-align: center;
+        padding:  60px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
+        @media #{$xl,$lg,$md,$xs} {
+            padding:  60px 20px;
+        }
 
+        .icon {
+            width: 80px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 42px;
 
+        }
 
+        .title {
+            font-size: 24px;
+            transition: .2s var(--cube-1);
+            margin-bottom: 20px;
 
+            @media #{$xl,$lg,$md,$xs} {
+                font-size: 22px;
+            }
+
+            &:hover {
+                color: var(--kd-clr-sd-1);
+                transform: scaleX(102%);
+            }
+        }
+        
+
+        .disc {
+            font-size: 17px;
+            line-height: 26px;
+            color: #797a84;
+        }
+
+        &:hover {
+            .icon {
+                img {
+                    animation: 1s kd-jello;
+                }
+            }
+        }
+    }
+
+    &-slider {
+        position: relative;
+        z-index: 1;
+
+        .swiper-container {
+            margin-right: -40px;
+            margin-left: -40px;
+            padding-top: 20px;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 40px;
+
+            .swiper-slide {
+                transition: 1s;
+                &:is(.swiper-slide-prev) {
+                    opacity: 0;
+                }
+            }
+        }
+
+    }
+
+    &-slider-btn {
+        @media #{$xl,$lg,$md,$xs} {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .kd-slider-btn-1 {
+            background: #363539;
+            color: #fff;
+
+            .icon-1 {
+                color: #fff;
+            }
+
+            .icon-2 {
+                color: #fff;
+            }
+
+            &:hover {
+                background: var(--kd-clr-sd-1);
+            }
+        }
+
+        .kd_services_3_slider_next {
+            position: absolute;
+            right: -85px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            display: inline-block;
+
+            @media #{$xl,$lg,$md,$xs} {
+                position: unset;
+                transform: unset;
+            }
+        }
+        .kd_services_3_slider_prev {
+            position: absolute;
+            left: -85px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            display: inline-block;
+            
+            @media #{$xl,$lg,$md,$xs} {
+                position: unset;
+                transform: unset;
+            }
+        }
+    }
+    
+}
 
 
 /* 
-    services-2-end
+    services-3-end
 */
 

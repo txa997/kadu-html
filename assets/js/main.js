@@ -632,6 +632,7 @@ if($('.kd-client-2-active').length) {
 		},
 
 
+
 		breakpoints: {
 			0: {
 				slidesPerView: 2,
@@ -647,6 +648,78 @@ if($('.kd-client-2-active').length) {
 			},
 			1200: {
 				slidesPerView: 6,
+			},
+
+		},
+	});
+}
+
+// services-3-slider
+if($('.kd-services-3-active').length) {
+	let slider = new Swiper('.kd-services-3-active', {
+		loop: true,
+		spaceBetween: 30,
+		slidesPerView: 4,
+		speed: 1000,
+		autoplay: {
+			delay: 5000,
+		},
+
+		navigation: {
+			nextEl: ".kd_services_3_slider_next",
+			prevEl: ".kd_services_3_slider_prev",
+		},
+		
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
+			},
+			576: {
+				slidesPerView: 2,
+			},
+			768: {
+				slidesPerView: 2,
+			},
+			992: {
+				slidesPerView: 3,
+			},
+			1200: {
+				slidesPerView: 4,
+			},
+
+		},
+	});
+}
+  
+
+// course-4-slider
+if($('.kd-course-4-active').length) {
+	let slider = new Swiper('.kd-course-4-active', {
+		loop: true,
+		spaceBetween: 30,
+		slidesPerView: 4,
+		speed: 1000,
+		autoplay: {
+			delay: 5000,
+		},
+
+		navigation: {
+			nextEl: ".kd_course_4_slider_next",
+			prevEl: ".kd_course_4_slider_prev",
+		},
+		
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
+			},
+			576: {
+				slidesPerView: 1,
+			},
+			768: {
+				slidesPerView: 2,
+			},
+			992: {
+				slidesPerView: 3,
 			},
 
 		},

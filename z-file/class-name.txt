@@ -11,3 +11,5 @@ txaa-fade-right
 txaa-fade-left
 
 txaa-slide-down-1
+
+txaa-scale-up
