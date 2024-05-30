@@ -1,3 +1,6 @@
+/* 
+    video-course-1-start
+*/
 
 .kd-video-course-1 {
     &-video {
@@ -183,3 +186,47 @@
         }
     }
 }
+
+/* 
+    video-course-1-end
+*/
+
+/* 
+    video-course-2-start
+*/
+.kd-video-course-3 {
+
+    &-content {
+        margin-bottom: 30px;
+    }
+
+    &-item {
+        height: 380px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+
+        img {
+            transition: transform 500ms;
+            transform: perspective(0px) rotateX(0deg) rotateY(0deg) scaleX(1) scaleY(1);
+            transform-origin: center center;
+        }
+
+        .btn-position {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover {
+            img {
+                transform: perspective(600px) rotateX(0.06deg) rotateY(0deg) scaleX(1.15) scaleY(1.15);
+            }
+        }
+    }
+}
+
+
+/* 
+    video-course-2-end
+*/

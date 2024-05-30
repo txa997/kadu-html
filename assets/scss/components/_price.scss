@@ -297,3 +297,140 @@
 /* 
     price-1-end
 */
+
+/* 
+    price-4-start
+*/
+
+
+.kd-price-4 {
+    &-content {
+
+        &-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        &-wrap {
+            padding: 70px 75px;
+            border-radius: 20px;
+            padding-bottom: 160px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+
+            @media #{$md} {
+                padding: 70px 25px;
+                padding-bottom: 160px;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @media #{$xs} {
+                padding: 70px 25px;
+                padding-bottom: 160px;
+                grid-template-columns: 1fr ;
+            }
+
+            @media #{$sm} {
+                padding: 70px 25px;
+                padding-bottom: 160px;
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        .title {
+            font-size: 55px;
+            line-height: 1.27;
+
+            @media #{$lg,$md,$xs} {
+                font-size: 40px;
+                
+            }
+        }
+
+        .disc {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 60px;
+            margin-bottom: 25px;
+
+            @media #{$lg,$md,$xs} {
+                font-size: 50px;
+                
+            }
+
+            span {
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+
+        .kd-pr-btn-1 {
+            background: #000;
+            .text {
+                &::before {
+                    color: #fff;
+                }
+                &::after {
+                    color: #000;
+                }
+            }
+
+            &:hover {
+                background: var(--kd-clr-sd-1);
+            }
+        }
+
+        &-img {
+            height: 285px;
+            border-radius: 20px;
+        }
+
+        &-list {
+            padding-top: 20px;
+
+            @media #{$xs} {
+                padding-top: 0px;
+            }
+
+            .title {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+
+            .kd-list-1 {
+                
+                grid-template-columns: 1fr;
+
+                li {
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    i {
+                        margin-right: 0px;
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/* 
+    price-4-end
+*/

@@ -323,10 +323,11 @@ const txaaslideinright = gsap.utils.toArray('.txaa-slide-right');
 const txaafadeinleft = gsap.utils.toArray('.txaa-fade-left');
 const txaascaleup = gsap.utils.toArray('.txaa-scale-up');
 const txaascalexup = gsap.utils.toArray('.txaa-scalex-up');
+const txaascalexdown = gsap.utils.toArray('.txaa-scalex-down');
 
 
 txaafadeinright.forEach((box, i) => {
-	const anim = gsap.fromTo(box, {autoAlpha: 0, x: 50}, {duration: 1, stagger: 0.2 , autoAlpha: 1, x: 0});
+	const anim = gsap.fromTo(box, {autoAlpha: 0, stagger: 1 , x: 50}, {duration: 1, stagger: 1 , autoAlpha: 1, x: 0});
 	ScrollTrigger.create({
 		trigger: box,
 		start: "top 85%",
@@ -371,6 +372,17 @@ txaascaleup.forEach((box, i) => {
 
 txaascalexup.forEach((box, i) => {
 	const anim = gsap.fromTo(box, { scaleX: 0, transformOrigin: "center" }, {duration: 3, scaleX: 1});
+	ScrollTrigger.create({
+		trigger: box,
+		start: "top 85%",
+		animation: anim,
+		toggleActions: 'play none none reverse',
+		once: false,
+	});
+});
+
+txaascalexdown.forEach((box, i) => {
+	const anim = gsap.fromTo(box, { scaleX: "150%", transformOrigin: "center" }, {duration: 1, scaleX: "100%"});
 	ScrollTrigger.create({
 		trigger: box,
 		start: "top 85%",
@@ -448,13 +460,13 @@ gsap.utils.toArray('.kd-subtitle-ani-1').forEach((container, index) => {
 
 
 // class-add
-const txaaddclass = gsap.utils.toArray('.ftc-add-class');
+const txaaddclass = gsap.utils.toArray('.txxa-add-class');
 txaaddclass.forEach(img => {
 	gsap.to(img, {
 		scrollTrigger: {
 			trigger: img,
 			scrub: 1,
-			start: "top 95%",
+			start: "top 90%",
 			toggleClass: "active",
 			toggleActions: "play reverse play reverse",
 			markers: false
@@ -706,6 +718,42 @@ if($('.kd-course-4-active').length) {
 		navigation: {
 			nextEl: ".kd_course_4_slider_next",
 			prevEl: ".kd_course_4_slider_prev",
+		},
+		
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
+			},
+			576: {
+				slidesPerView: 1,
+			},
+			768: {
+				slidesPerView: 2,
+			},
+			992: {
+				slidesPerView: 3,
+			},
+
+		},
+	});
+}
+  
+  
+
+// course-5-slider
+if($('.kd-course-5-active').length) {
+	let slider = new Swiper('.kd-course-5-active', {
+		loop: true,
+		spaceBetween: 30,
+		slidesPerView: 3,
+		speed: 1000,
+		autoplay: {
+			delay: 5000,
+		},
+
+		navigation: {
+			nextEl: ".kd_course_5_slider_next",
+			prevEl: ".kd_course_5_slider_prev",
 		},
 		
 		breakpoints: {
