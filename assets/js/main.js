@@ -775,6 +775,21 @@ if($('.kd-course-5-active').length) {
 }
   
 
+// gallery-3-marquee
+if($('.gellary-3-marquee').length) {
+	$('.gellary-3-marquee').marquee({
+		duration: 25000,
+		gap: 0,
+		delayBeforeStart: 0,
+		startVisible:true,
+	  	pauseOnHover: true,
+		direction: 'left',
+		duplicated: true
+	});
+}
+
+
+
 
 /* 
  	price-1-active-class
@@ -784,8 +799,6 @@ $(".kd-price-1-table-feature-item").on("click", function(){
 	current_class[0].className = current_class[0].className.replace(" active", "");
 	this.className += " active";
 });
-
-
 
 
   

@@ -54,6 +54,10 @@
     &:is(.has-clr-white) {
         color: #fff;
     }
+
+    &:is(.has-clr-black) {
+        color: #000;
+    }
 }
 
 .kd-section-title-1 {

@@ -143,6 +143,31 @@
         }
     }
 
+    &:is(.has-black-2) {
+        background: #000;
+
+        .text {
+            &::after {
+                color: #000;
+            }
+        
+            &::before {
+                color: #fff;
+            }
+        }
+
+        .icon {
+            color: #fff;
+        }
+
+        &:hover {
+            background: var(--kd-clr-sd-1);
+            .icon {
+                color: #000;
+            }
+        }
+    }
+
     &:is(.has-pr-clr) {
         background: var(--kd-clr-pr-1);
 
