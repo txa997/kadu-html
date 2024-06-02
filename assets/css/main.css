@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
 /* 
     root-veriable-start
 */
@@ -7,6 +9,8 @@
   scroll-behavior: inherit;
   --kd-font-pr-1: "Urbanist", sans-serif;
   --kd-font-sd-1: "Just Another Hand", cursive;
+  --kd-font-barlow: "Barlow Semi Condensed", sans-serif;
+  --kd-font-fraunces: "Fraunces", serif;
   --kd-clr-pr-1: #005e4f;
   --kd-clr-sd-1: #ef991f;
   --kd-clr-h-1: #363539;
@@ -2834,7 +2838,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   top: 100%;
   z-index: 100;
   margin: 0px;
-  padding: 20px 20px;
+  padding: 20px 0px;
   height: auto;
   min-width: 250px;
   display: block;
@@ -2861,15 +2865,19 @@ input:focus::placeholder, textarea:focus::placeholder {
   width: 100%;
   font-weight: 500;
   display: block;
-  padding: 10px 0px;
+  padding: 10px 20px;
   font-size: 16px;
 }
 .main-navigation .navbar-nav li .dropdown-menu li a:is(.is-active) {
   color: var(--kd-clr-sd-1);
 }
+.main-navigation .navbar-nav li .dropdown-menu li:is(.dropdown) > a::before {
+  right: 20px;
+  top: 49%;
+}
 .main-navigation .navbar-nav li .dropdown-menu li .dropdown-menu {
   top: 0;
-  left: calc(100% + 20px);
+  left: 100%;
   min-width: 250px;
   opacity: 0;
   visibility: hidden;
