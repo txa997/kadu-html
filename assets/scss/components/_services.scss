@@ -334,3 +334,161 @@
     services-3-end
 */
 
+
+/* 
+    services-4-start
+*/
+.kd-services-4 {
+    &-scn-title {
+        gap: 30px;
+
+        @media #{$md,$xs} {
+            flex-wrap: wrap;
+            gap: 0px;
+            margin-bottom: 30px;
+        }
+
+        .scn-disc {
+            max-width: 520px;
+         
+        }
+    }
+
+
+    &-card {
+        height: 495px;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        background: #152028;
+        border: 1px solid #1E2B33;
+        transition: .5s ease-in-out;
+
+        @media #{$xs} {
+            height: 425px;
+        }
+
+        .card-img {
+            opacity: 0%;
+            transition: .5s ease-in-out;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card-icon {
+            width: 84px;
+            height: 84px;
+            background: var(--kd-clr-pr-4);
+            border-radius: 5px;
+            font-size: 40px;
+            color: #fff;
+            position: absolute;
+            top: -50px;
+            left: 40px;
+            opacity: 0;
+            transition: .5s var(--cube-1);
+        }
+
+        .card-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 50px 40px;
+            width: 100%;
+            transition: .4s ease-in-out;
+
+            @media #{$xs} {
+                padding: 50px 20px;
+            }
+        }
+        
+        .card-title {
+            font-size: 30px;
+            line-height: 1.2;
+            margin-bottom: 22px;
+            transition: .2s ease-in-out;
+
+            @media #{$lg} {
+                font-size: 24px;
+            }
+
+            @media #{$md,$xs} {
+                font-size: 24px;
+            }
+            &:hover {
+                color: var(--kd-clr-pr-4);
+            }
+        }
+
+        .card-number {
+            font-size: 140px;
+            line-height: 1;
+            position: absolute;
+            right: 30px;
+            bottom: 0;
+            font-weight: 900;
+            color: #1E2B33;
+            transition: .4s ease-in-out;
+
+            @media #{$xl,$lg,$md,$xs} {
+                font-size: 100px;
+            }
+        }
+
+        &:hover {
+            border-color: var(--kd-clr-pr-4);
+
+            .card-icon {
+                top: 50px;
+                opacity: 1;
+            }
+
+            .card-img {
+                opacity: 30%;
+            }
+
+            .card-content {
+                top: 200px;
+
+                @media #{$xs} {
+                    top: 150px;
+                }
+            }
+
+            .card-number {
+                bottom: -100px;
+                opacity: 0;
+            }
+        }
+    }
+    
+    &-slider {
+        margin-right: -350px;
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            margin-right: 0px;
+        }
+
+        .swiper-container {
+            .swiper-wrapper {
+                .swiper-slide {
+                    transition: .5s;
+                    &:nth-child(odd) {
+                        margin-top: 60px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-slider-btn {
+        gap: 30px;
+    }
+}
+
+
+
+/* 
+    services-4-end
+*/
+

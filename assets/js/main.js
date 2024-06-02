@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		      .from(".kd-hero-2-form " , {  x: -100 , duration:1, ease: "easeInOut", opacity:0 }, "<.5")
 
 
-		// h2-start
+		// h3-start
 		const kdh3tl = gsap.timeline();
 
 		kdh3tl.from(".kd-hero-3-img " , {  yPercent: 100 , duration:1, ease: "easeInOut", opacity:0 , stagger: .5, delay: 1})
@@ -109,8 +109,12 @@ document.addEventListener("DOMContentLoaded", function () {
 			  .from(".kd-hero-3-il-2 " , {  scale: 1.5 , duration:.5, ease: "easeInOut", opacity:0})
 			  .from(".kd-hero-3-il-3 " , {  scale: 1.5 , duration:.5, ease: "easeInOut", opacity:0})
 			  .from(".kd-hero-3-il-4 " , {  scale: 1.5 , duration:.4, ease: "easeInOut", opacity:0})
-		     
-			
+
+		// h3-start
+		const kdh4tl = gsap.timeline();
+
+		kdh4tl.from(".kd-hero-1-bg-img " , {  scaleX: 2 , duration:1, ease: "easeInOut",  delay: 1})
+		kdh4tl.from(".kd-hero-4-img img " , {  yPercent: 100 , duration:1, ease: "easeInOut", },)
 		
 	})
 
@@ -491,6 +495,21 @@ var kdprice1 = gsap.timeline({
 	
 kdprice1.from(".kd-price-1-bg-img" , {     height: "calc(100% - 0px)" ,  duration:1 })
 
+// hero-4
+gsap.to(".kd-hero-4-il-1 svg .path-1", 1, {
+    x: 30,
+	y: -30,
+    repeat: -1,
+    yoyo: true,
+    ease: Power2.easeInOut
+});
+gsap.to(".kd-hero-4-il-1 svg .path-3", 1, {
+    x: -30,
+	y: 30,
+    repeat: -1,
+    yoyo: true,
+    ease: Power2.easeInOut
+});
 
 
 // popular-category-1-slider
@@ -768,6 +787,50 @@ if($('.kd-course-5-active').length) {
 			},
 			992: {
 				slidesPerView: 3,
+			},
+
+		},
+	});
+}
+  
+
+// course-5-slider
+if($('.kd-services-4-active').length) {
+	let slider = new Swiper('.kd-services-4-active', {
+		loop: true,
+		spaceBetween: 0,
+		slidesPerView: 4,
+		speed: 1000,
+		autoplay: {
+			delay: 5000,
+		},
+
+		navigation: {
+			nextEl: ".kd_services_1_slider_next",
+			prevEl: ".kd_services_1_slider_prev",
+		},
+		
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
+			},
+			576: {
+				slidesPerView: 1,
+			},
+			768: {
+				slidesPerView: 2,
+			},
+			992: {
+				slidesPerView: 2,
+			},
+			1200: {
+				slidesPerView: 3,
+			},
+			1400: {
+				slidesPerView: 3,
+			},
+			1600: {
+				slidesPerView: 4,
 			},
 
 		},

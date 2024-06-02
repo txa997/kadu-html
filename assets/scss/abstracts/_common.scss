@@ -177,6 +177,9 @@ input:focus::placeholder, textarea:focus::placeholder {
         &.kd-container-1 {
             max-width: 1275px;
         }
+        &.kd-container-2 {
+            max-width: 1315px;
+        }
 
     }
     
@@ -326,7 +329,61 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 
+.line-limit {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 
+    &:is(.has-line-1) {
+        -webkit-line-clamp: 1; 
+        line-clamp: 1; 
+    }
+
+    &:is(.has-line-2) {
+        -webkit-line-clamp: 2; 
+        line-clamp: 2; 
+    }
+
+    &:is(.has-line-3) {
+        -webkit-line-clamp: 3; 
+        line-clamp: 3; 
+    }
+
+    &:is(.has-line-4) {
+        -webkit-line-clamp: 4; 
+        line-clamp: 4; 
+    }
+
+    &:is(.has-line-5) {
+        -webkit-line-clamp: 5; 
+        line-clamp: 5; 
+    }
+
+    &:is(.has-line-6) {
+        -webkit-line-clamp: 6; 
+        line-clamp: 6; 
+    }
+
+    &:is(.has-line-7) {
+        -webkit-line-clamp: 7; 
+        line-clamp: 7; 
+    }
+
+    &:is(.has-line-8) {
+        -webkit-line-clamp: 8; 
+        line-clamp: 8; 
+    }
+
+    &:is(.has-line-9) {
+        -webkit-line-clamp: 9; 
+        line-clamp: 9; 
+    }
+
+    &:is(.has-line-10) {
+        -webkit-line-clamp: 10; 
+        line-clamp: 10; 
+    }
+}
 
 /* 
     all-common-class-end
