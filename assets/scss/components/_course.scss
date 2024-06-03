@@ -1119,3 +1119,105 @@
 /* 
     course-5-end
 */
+
+/* 
+    course-6-start
+*/
+
+.kd-course-4 {
+    &-card {
+        background: rgb(255 255 255 / 4%);
+        padding: 15px;
+        border-radius: 10px;
+
+        .item-img {
+            height: 295px;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 22px;
+        }
+
+        .item-categories {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--kd-clr-pr-4);
+            border-radius: 5px;
+            text-transform: capitalize;
+            line-height: 1;
+            font-size: 18px;
+            font-weight: 500;
+            border: 1px solid rgb(255 255 255 / 50%);
+            padding: 11px 19px;
+            z-index: 1;
+        }
+
+        .item-rating {
+            position: absolute;
+            right: 15px;
+            top: 18px;
+            background: rgb(255 255 255 / 20%);
+            border: 1px solid rgb(255 255 255 / 50%);
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(50px);
+            border-radius: 5px;
+            font-size: 18px;
+            line-height: 1;
+            z-index: 1;
+            padding: 6px 8px;
+
+            i {
+                margin-right: 5px;
+                color: #FFC107;
+            }
+        }
+
+        .item-author {
+            position: absolute;
+            bottom: 0;
+            left: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            &-img {
+                height: 62px;
+                width: 58px;
+                border-radius: 100px 100px 0 0;
+                border: 5px solid #202E37;
+            }
+
+            &-name {
+                font-size: 18px;
+                line-height: 26px;
+                font-weight: 600;
+            }
+        }
+
+        &-feature {
+            li {
+                font-size: 16px;
+                font-weight: 500;
+                font-family: var(--kd-font-barlow);
+                color: rgb(255 255 255 / 80%);
+                line-height: 26px;
+            }
+        }
+
+        .item-title {
+            font-size: 24px;
+            line-height: 1.33;
+            margin-bottom: 22px;
+        }
+        
+    }
+}
+
+
+
+
+
+/* 
+    course-6-end
+*/

@@ -338,7 +338,36 @@
 /* 
     services-4-start
 */
+
+
 .kd-services-4 {
+
+    &-area {
+        position: relative;
+    }
+
+    &-il-1 {
+        position: absolute;
+        right: 30px;
+        top: 100px;
+        z-index: -1;
+
+        @media #{$md,$xs} {
+            display: none;
+        }
+    }
+
+    &-il-2 {
+        position: absolute;
+        bottom: 90px;
+        left: 0;
+        z-index: -1;
+
+        @media #{$md,$xs} {
+            display: none;
+        }
+    }
+
     &-scn-title {
         gap: 30px;
 

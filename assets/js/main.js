@@ -511,6 +511,15 @@ gsap.to(".kd-hero-4-il-1 svg .path-3", 1, {
     ease: Power2.easeInOut
 });
 
+// categories
+gsap.to(".kd-category-4-il-1 svg .path", 1, {
+	opacity: 0,
+    repeat: -1,
+	stagger: .5,
+    yoyo: true,
+    ease: Power2.easeInOut
+});
+
 
 // popular-category-1-slider
 if($('.kd-pop-cat-1-active').length) {

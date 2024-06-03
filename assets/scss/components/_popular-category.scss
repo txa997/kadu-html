@@ -247,3 +247,308 @@
 /* 
     categorie-1-end
 */
+/* 
+    categorie-4-start
+*/
+
+.kd-category-4 {
+
+    &-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        border-radius: 0  0 200px 200px;
+    }
+
+    &-il-1 {
+        position: absolute;
+        right: 110px;
+        bottom: 90px;
+        z-index: -1;
+    }
+
+    &-scn-title {
+        max-width: 940px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &-card-row {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &-card {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        width: 410px;
+        background: transparent;
+        border: 1px solid;
+        border-color:  rgb(215 0 7 / 20%);
+        border-radius: 10px;
+        padding: 15px;
+        position: relative;
+        z-index: 1;
+        transition: .4s ease;
+
+
+        @media #{$xs} {
+            width: 100%;
+        }
+
+        @media #{$sm} {
+            width: 410px;
+        }
+    
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(163,29,93,1) 0%, rgba(230,103,68,1) 100%);
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+            transform-origin: center center;
+            transform: rotate(0deg);
+            transition: .4s var(--cube-1);
+        }
+    
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #152028;
+            border-radius: 10px;
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            z-index: -1;
+        }
+        
+    
+        .icon {
+            width: 100px;
+            height: 100px;
+            background: rgb(215 0 7 / 20%);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            color: #D70007;
+            flex: 0 0 auto;
+            transition: .4s ease;
+        }
+    
+        .card-title {
+            font-size: 22px;
+            line-height: 1.60;
+            font-weight: 600;
+            margin-bottom: 8px;
+            transition: .3s ease;
+
+            @media #{$xs} {
+                font-size: 18px;
+            }
+    
+            @media #{$sm} {
+                font-size: 22px;
+            }
+
+            &:hover {
+                transform: translateX(3px);
+            }
+            
+        }
+    
+        .course-count {
+            font-size: 18px;
+            font-weight: 600;
+            color: #D70007;
+            line-height: 26px;
+        }
+    
+        &:hover {
+            border-color:  rgb(215 0 7 / 100%);
+
+            .icon {
+                background: rgb(215 0 7 / 100%);
+                color: #fff;
+            }
+
+            &::after {
+                transform: rotate(-5deg);
+            }
+        }
+        
+
+
+        &:nth-child(2) {
+            border-color: rgb(41 166 213 / 20%);
+            .icon {
+                background: rgb(41 166 213 / 15%);
+                color: #29A6D5;
+            }
+            .course-count {
+                color: #29A6D5;
+            }
+
+            &::after {
+                background: linear-gradient(45deg, rgba(41,166,213,1) 0%, rgba(41,213,171,1) 100%);
+            }
+
+            &:hover {
+                border-color: rgb(41 166 213 / 100%);
+
+                .icon {
+                    background: rgb(41 166 213 / 100%);
+                    color: #fff;
+                }
+            }
+        }
+
+
+        &:nth-child(3) {
+            border-color: rgb(8 213 101 / 20%);
+            .icon {
+                background: rgb(8 213 101 / 15%);
+                color: #08D565;
+            }
+            .course-count {
+                color: #08D565;
+            }
+
+            &::after {
+                background: linear-gradient(45deg, rgba(8,213,101,1) 0%, rgba(92,255,166,1) 100%);
+
+            }
+
+            &:hover {
+                border-color: rgb(8 213 101 / 100%);
+
+                .icon {
+                    background: rgb(8 213 101 / 100%);
+                    color: #fff;
+                }
+            }
+        }
+
+        &:nth-child(4) {
+            border-color: rgb(249 217 11 / 20%);
+            .icon {
+                background: rgb(249 217 11 / 15%);
+                color: #F9D90B;
+            }
+            .course-count {
+                color: #F9D90B;
+            }
+
+            &::after {
+                background: linear-gradient(45deg, rgba(249,217,11,1) 0%, rgba(172,249,11,1) 100%);
+
+            }
+
+            &:hover {
+                border-color: rgb(249 217 11 / 100%);
+
+                .icon {
+                    background: rgb(249 217 11 / 100%);
+                    color: #fff;
+                }
+            }
+        }
+
+        &:nth-child(5) {
+            border-color: rgb(227 26 207 / 20%);
+            .icon {
+                background: rgb(227 26 207 / 15%);
+                color: #E31ACF;
+            }
+            .course-count {
+                color: #E31ACF;
+            }
+
+            &::after {
+                background: linear-gradient(45deg, rgba(227,26,207,1) 0%, rgba(157,26,227,1) 100%);
+
+            }
+
+            &:hover {
+                border-color: rgb(227 26 207 / 100%);
+
+                .icon {
+                    background: rgb(227 26 207 / 100%);
+                    color: #fff;
+                }
+            }
+        }
+
+        &:nth-child(6) {
+            border-color: rgb(24 109 235 / 20%);
+            .icon {
+                background: rgb(24 109 235 / 15%);
+                color: #186DEB;
+            }
+            .course-count {
+                color: #186DEB;
+            }
+
+            &::after {
+                background: linear-gradient(45deg, rgba(24,109,235,1) 0%, rgba(24,213,235,1) 100%);
+
+            }
+
+            &:hover {
+                border-color: rgb(24 109 235 / 100%);
+
+                .icon {
+                    background: rgb(24 109 235 / 100%);
+                    color: #fff;
+                }
+            }
+        }
+        
+        
+        &:nth-child(8) {
+            border-color: rgb(249 217 11 / 20%);
+            .icon {
+                background: rgb(249 217 11 / 15%);
+                color: #F9D90B;
+            }
+            .course-count {
+                color: #F9D90B;
+            }
+
+            &::after {
+                background: linear-gradient(45deg, rgba(249,217,11,1) 0%, rgba(172,249,11,1) 100%);
+
+            }
+
+            &:hover {
+                border-color: rgb(249 217 11 / 100%);
+
+                .icon {
+                    background: rgb(249 217 11 / 100%);
+                    color: #fff;
+                }
+            }
+        }
+
+    }
+}
+
+
+
+/* 
+    categorie-4-end
+*/
