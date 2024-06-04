@@ -845,6 +845,75 @@ if($('.kd-services-4-active').length) {
 		},
 	});
 }
+
+
+  
+/*
+solutions-3
+====start====
+*/
+
+if($('.kd-team-4-slide-main-active').length) {
+
+	
+	let s3_thumb = new Swiper('.kd-team-4-slide-prview-active', {
+		spaceBetween: 30,
+		loop: true,
+		speed: 1000,
+		centeredSlides: false,
+		watchSlidesProgress: true,
+
+		breakpoints: {
+			320: {
+				slidesPerView: 1,
+			},
+			576: {
+				slidesPerView: 2,
+
+			},
+			768: {
+				slidesPerView: 2,
+
+			},
+			992: {
+				slidesPerView: 4,
+			},
+			1200: {
+				slidesPerView: 3,
+			},
+		}
+	});
+
+	let slider = new Swiper('.kd-team-4-slide-main-active', {
+		loop: true,
+		spaceBetween: 0,
+		speed: 1000,
+		rtl: false,
+		slidesPerView: 1,
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true
+		},
+
+		autoplay: {
+			delay: 5000,
+		},
+
+		thumbs: {
+			swiper: s3_thumb,
+		},
+	});
+
+	
+
+}
+
+
+
+/*
+solutions-3
+====end====
+*/
   
 
 // gallery-3-marquee
