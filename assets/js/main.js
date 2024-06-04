@@ -495,7 +495,7 @@ var kdprice1 = gsap.timeline({
 	
 kdprice1.from(".kd-price-1-bg-img" , {     height: "calc(100% - 0px)" ,  duration:1 })
 
-// hero-4
+// shape-animation
 gsap.to(".kd-hero-4-il-1 svg .path-1", 1, {
     x: 30,
 	y: -30,
@@ -511,11 +511,74 @@ gsap.to(".kd-hero-4-il-1 svg .path-3", 1, {
     ease: Power2.easeInOut
 });
 
-// categories
 gsap.to(".kd-category-4-il-1 svg .path", 1, {
 	opacity: 0,
     repeat: -1,
 	stagger: .5,
+    yoyo: true,
+    ease: Power2.easeInOut
+});
+
+gsap.to(".kd-category-4-il-1 svg .path", 1, {
+	opacity: 0,
+    repeat: -1,
+	stagger: .5,
+    yoyo: true,
+    ease: Power2.easeInOut
+});
+
+gsap.to(".kd-services-4-il-1  svg path", 1, {
+	opacity: 0,
+    repeat: -1,
+	stagger: .3,
+    yoyo: true,
+    ease: Power2.easeInOut
+});
+
+gsap.to(".kd-services-4-il-2  svg path", 1, {
+	opacity: 0,
+    repeat: -1,
+	stagger: .1,
+    yoyo: true,
+    ease: Power2.easeInOut
+});
+
+gsap.to(".kd-course-4-il svg path", 2, {
+	opacity: 0,
+    repeat: -1,
+	stagger: .3,
+    yoyo: true,
+    ease: Power2.easeInOut
+});
+
+gsap.to(".kd-choose-4-il svg path", 2, {
+	opacity: 0,
+    repeat: -1,
+	stagger: .3,
+    yoyo: true,
+    ease: Power2.easeInOut
+});
+
+gsap.to(".kd-team-4-il-3 svg path", 2, {
+	opacity: 0,
+    repeat: -1,
+	stagger: .3,
+    yoyo: true,
+    ease: Power2.easeInOut
+});
+
+gsap.to(".kd-team-4-il-2 svg path", 2, {
+	opacity: 0,
+    repeat: -1,
+	stagger: .3,
+    yoyo: true,
+    ease: Power2.easeInOut
+});
+
+gsap.to(".kd-team-4-il-1 svg path", 2, {
+	opacity: 0,
+    repeat: -1,
+	stagger: .3,
     yoyo: true,
     ease: Power2.easeInOut
 });
