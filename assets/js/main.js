@@ -583,6 +583,30 @@ gsap.to(".kd-team-4-il-1 svg path", 2, {
     ease: Power2.easeInOut
 });
 
+gsap.to(".kd-event-4-il svg path", 1.5, {
+	opacity: 0,
+    repeat: -1,
+	stagger: .3,
+    yoyo: true,
+    ease: Power2.easeInOut
+});
+
+gsap.to(".kd-testimonial-4-il svg path", 1.5, {
+	opacity: 0,
+    repeat: -1,
+	stagger: .3,
+    yoyo: true,
+    ease: Power2.easeInOut
+});
+
+gsap.to(".kd-testimonial-4-il-2 svg path", 1.5, {
+	opacity: 0,
+    repeat: -1,
+	stagger: .3,
+    yoyo: true,
+    ease: Power2.easeInOut
+});
+
 
 // popular-category-1-slider
 if($('.kd-pop-cat-1-active').length) {
@@ -619,6 +643,26 @@ if($('.kd-pop-cat-1-active').length) {
 
 
 		},
+	});
+}
+  
+
+// testimonial-4-slider
+if($('.kd-testimonial-4-active').length) {
+	let slider = new Swiper('.kd-testimonial-4-active', {
+		loop: true,
+		spaceBetween: 40,
+		slidesPerView: 1,
+		speed: 1000,
+		autoplay: {
+			delay: 5000,
+		},
+
+		navigation: {
+			nextEl: ".kd-testimonial-4-slider-next",
+			prevEl: ".kd-testimonial-4-slider-prev",
+		},
+
 	});
 }
   
@@ -910,12 +954,8 @@ if($('.kd-services-4-active').length) {
 }
 
 
-  
-/*
-solutions-3
-====start====
-*/
 
+// team-4
 if($('.kd-team-4-slide-main-active').length) {
 
 	
@@ -935,11 +975,11 @@ if($('.kd-team-4-slide-main-active').length) {
 
 			},
 			768: {
-				slidesPerView: 2,
+				slidesPerView: 3,
 
 			},
 			992: {
-				slidesPerView: 4,
+				slidesPerView: 3,
 			},
 			1200: {
 				slidesPerView: 3,
@@ -971,13 +1011,49 @@ if($('.kd-team-4-slide-main-active').length) {
 
 }
 
+// event-4
+if($('.kd-event-4-active').length) {
+	
+	let slider = new Swiper('.kd-event-4-active', {
+		spaceBetween: 30,
+		loop: true,
+		speed: 1000,
+
+		navigation: {
+			nextEl: ".kd_event_4_slider_next",
+			prevEl: ".kd_event_4_slider_prev",
+		},
+
+		breakpoints: {
+			320: {
+				slidesPerView: 1,
+			},
+			576: {
+				slidesPerView: 1,
+
+			},
+			768: {
+				slidesPerView: 2,
+
+			},
+			992: {
+				slidesPerView: 2,
+			},
+			1200: {
+				slidesPerView: 3,
+			},
+			1400: {
+				slidesPerView: 3,
+			},
+			1600: {
+				slidesPerView: 4,
+			},
+		}
+	});
 
 
-/*
-solutions-3
-====end====
-*/
-  
+}
+
 
 // gallery-3-marquee
 if($('.gellary-3-marquee').length) {

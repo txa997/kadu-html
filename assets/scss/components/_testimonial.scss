@@ -370,4 +370,125 @@
     testimonial-2-end
 */
 
+/*
+    testimonial-4-start
+*/
+.kd-testimonial-4 {
+
+    &-il {
+        position: absolute;
+        right: 5%;
+        top: 10%;
+        z-index: -1;
+
+        @media #{$lg,$md,$xs} {
+            display: none;
+        }
+    }
+    
+    &-il-2 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    &-img {
+        @media #{$md,$xs} {
+            margin-bottom: 50px;
+        }
+    }
+
+    &-slider {
+        padding-left: 40px;
+
+        @media #{$md,$xs} {
+            padding-left: 0;
+        }
+    }
+
+    &-item {
+        max-width: 610px;
+
+        .icon {
+            font-size: 70px;
+            line-height: 1;
+            color: var(--kd-clr-pr-4);
+            margin-bottom: 20px;
+        }
+        .title {
+            font-size: 34px;
+            line-height: 1.17;
+            margin-bottom: 22px;
+
+            @media #{$xs} {
+                font-size: 26px;
+            }
+        }
+
+        .comment {
+            font-size: 22px;
+            line-height: 34px;
+            margin-bottom: 45px;
+        }
+
+        &-author {
+            .author-name {
+                font-size: 24px;
+                line-height: 30px;
+                margin-bottom: 8px;
+            }
+            .author-bio {
+                font-size: 18px;
+                line-height: 26px;
+                color: var(--kd-clr-sd-4);
+            }
+        }
+        
+    }
+
+    &-slider-btn-wrap {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+
+        @media #{$xs} {
+            position: unset;
+            padding-top: 30px;
+        }
+
+        @media #{$sm} {
+            position: absolute;
+            padding-top: 0px;
+        }
+    }
+
+    &-slider-btn {
+        width: 54px;
+        height: 54px;
+        border: 1px solid var(--kd-clr-pr-4);
+        background: transparent;
+        font-size: 20px;
+        color: var(--kd-clr-pr-4);
+        flex: 0 0 auto;
+        transition: .5s ease;
+        cursor: pointer;
+
+        &:hover {
+            background: var(--kd-clr-pr-4);
+            color: #fff;
+        }
+    }
+    
+}
+
+
+/*
+    testimonial-4-end
+*/
+
 

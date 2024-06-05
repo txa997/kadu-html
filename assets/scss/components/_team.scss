@@ -186,6 +186,9 @@
 
     &-scn-title {
         padding-left: 70px;
+        @media #{$md,$xs} {
+            padding-left: 0px;
+        }
     }
 
     &-slide {
@@ -195,15 +198,38 @@
             border-radius: 10px;
             overflow: hidden;
 
+            @media #{$md,$xs} {
+                margin-bottom: 50px;
+            }
+
             &-item {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: flex-end;
+                justify-content: flex-start;
+                padding-top: 30px;
                 border-radius: 10px;
                 position: relative;
                 z-index: 1;
                 height: 700px;
+
+                @media #{$xl} {
+                    height: 600px;
+                }
+
+                @media #{$lg} {
+                    height: 530px;
+                }
+
+                @media #{$xs} {
+                    height: 500px;
+                    justify-content: flex-end;
+                }
+
+                @media #{$sm} {
+                    height: 500px;
+                    justify-content: flex-start;
+                }
 
                 img {
                     transition: 1s ease-in-out;
@@ -264,6 +290,10 @@
                     margin-bottom: 15px;
                     transition: .2s ease;
 
+                    @media #{$xl,$lg,$md,$xs} {
+                        font-size: 24px;
+                    }
+
                     &:hover {
                         color: var(--kd-clr-sd-4);
                     }
@@ -307,6 +337,10 @@
     &-slide-prview {
         margin-right: -290px;
 
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            margin-right: 0px;
+        }
+
         &-item {
             background-color: #1B1C1B;
             padding-top: 20px;
@@ -315,7 +349,14 @@
             border-radius: 10px;
             border: 1px solid var(--kd-clr-sd-4);
             height: 377px;
+            display: flex;
+            align-items: flex-start;
 
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                height: unset;
+            }
+
+        
         }
     }
 }

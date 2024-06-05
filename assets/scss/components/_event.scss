@@ -1,0 +1,211 @@
+/* 
+    event-4-start
+*/
+.kd-event-4 {
+
+    &-il {
+        position: absolute;
+        top: 14%;
+        left: 6%;
+        z-index: -1;
+
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            display: none;
+        }
+    }
+
+    &-scn-title {
+        gap: 0 30px;
+        @media #{$xs} {
+            flex-wrap: wrap;
+        }
+   
+    }
+
+    &-item {
+        // max-width: 410px;
+        background: #27333B;
+        border-radius: 10px;
+        border: 2px solid;
+        border-color: transparent;
+        transition: .3s ease;
+        position: relative;
+        z-index: 1;
+        transform-origin: top;
+
+        .item-content {
+            padding: 25px;
+
+            @media #{$md,$xs} {
+                padding: 15px;
+            }
+        }
+
+        .item-line {
+            width: 100%;
+            height: 1px;
+            background: rgb(255 255 255 / 10%);
+        }
+    
+        .item-title {
+            font-size: 24px;
+            line-height: 1.33;
+            transition: .2s ease;
+
+            @media #{$xl,$lg,$md,$xs} {
+                font-size: 20px; 
+            }
+
+            &:hover {
+                color: var(--kd-clr-sd-4);
+            }
+        }
+
+        .item-img {
+            width: 100%;
+            height: 360px;
+            position: relative;
+            z-index: 1;
+            transition: .5s ease;
+            border-radius: 0 0 10px 10px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0 0 10px 10px;
+            }
+        }
+    
+        &-date {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        
+            li {
+                font-family: var(--kd-font-barlow);
+                font-weight: 500;
+                color: rgb(255 255 255 / 80%);
+                font-size: 16px;
+                line-height: 24px;
+        
+                i {
+                    font-size: 18px;
+                    margin-right: 5px;
+                    color: var(--kd-clr-sd-4);
+                }
+            }
+        }
+
+        .item-time {
+            position: absolute;
+            top: 0;
+            left: 25px;
+            font-size: 18px;
+            line-height: 20px;
+            background: var(--kd-clr-sd-4);
+            color: #152028;
+            padding: 11px 22px;
+            border-radius: 0 0 5px 5px;
+
+            i {
+                margin-right: 3px;
+            }
+        }
+
+        &-btn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 0 0 10px 10px;
+            position: absolute;
+            left: 0;
+            top: 88%;
+            z-index: -1;
+            transition: .5s ease;
+        }
+
+        &:hover {
+            border-color: var(--kd-clr-pr-4);
+            .item-img {
+                border-radius: 0;
+            }
+            .kd-event-4-item-btn {
+                top:  calc(100% - 2px);
+            }
+        }
+        
+    }
+
+
+    &-slider {
+        margin-right: -440px;
+        
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            margin-right: 0px;
+        }
+    }
+
+    &-slider-btn {
+
+        @media #{$lg,$md,$xs} {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+            padding-top: 30px;
+        }
+        .kd_event_4_slider_prev {
+            position: absolute;
+            left: -28px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+
+            @media #{$lg,$md,$xs} {
+                position: unset;
+                transform: unset;
+            }
+        }
+        .kd_event_4_slider_next {
+            position: absolute;
+            right: 411px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+
+            @media #{$xxl,$xl} {
+                right: -30px;
+            }
+
+            @media #{$lg,$md,$xs} {
+                position: unset;
+                transform: unset;
+            }
+        }
+
+        .kd-slider-btn-2 {
+            border: 3px solid rgba(255, 255, 255, 1);
+            i {
+                color: #fff;
+            }
+
+
+            &:hover {
+                background: #fff;
+                i {
+                    color: var(--kd-clr-pr-4);
+                }
+            }
+        }
+    }
+}
+
+
+
+/* 
+    event-4-end
+*/
