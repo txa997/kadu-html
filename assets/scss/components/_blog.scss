@@ -354,6 +354,11 @@
     &-scn-title {
         gap: 0 30px;
 
+        @media #{$md,$xs} {
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
         .left {
             max-width: 560px;
         }
@@ -367,6 +372,10 @@
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
         gap: 30px;
+
+        @media #{$md,$xs} {
+            grid-template-columns: 1fr;
+        }
     }
 
     &-card {
@@ -375,6 +384,16 @@
         .item-img {
             height: 180px;
             margin-bottom: 18px;
+
+            @media #{$md,$xs} {
+                height: 300px;
+            }
+
+            img {
+                transition: transform 500ms;
+                transform: perspective(0px) rotateX(0deg) rotateY(0deg) scaleX(1) scaleY(1);
+                transform-origin: center center;
+            }
         }
 
         .item-title {
@@ -492,6 +511,14 @@
                 @media #{$xl,$lg} {
                     font-size: 36px;
                 }
+
+                @media #{$md} {
+                    font-size: 30px;
+                }
+
+                @media #{$xs} {
+                    font-size: 22px;
+                }
     
                 &:hover {
                     color: var(--kd-clr-pr-4);
@@ -501,6 +528,15 @@
             .item-disc {
                 margin-bottom: 25px;
             }
+        }
+
+        &:hover {
+            .item-img {
+                img {
+                    transform: perspective(600px) rotateX(0.06deg) rotateY(0deg) scaleX(1.15) scaleY(1.15);
+                }
+            }
+           
         }
         
     }

@@ -8,15 +8,17 @@
 "use strict";
 
 
-const lenis = new Lenis({
-	duration: 1.5,	
-})
 
 // smoooth scroll activation start
+const lenis = new Lenis({
+	duration: 1.2,	
+})
+
 function raf(time) {
   lenis.raf(time)
   requestAnimationFrame(raf)
 }
+
 requestAnimationFrame(raf)
 
 
@@ -110,11 +112,13 @@ document.addEventListener("DOMContentLoaded", function () {
 			  .from(".kd-hero-3-il-3 " , {  scale: 1.5 , duration:.5, ease: "easeInOut", opacity:0})
 			  .from(".kd-hero-3-il-4 " , {  scale: 1.5 , duration:.4, ease: "easeInOut", opacity:0})
 
-		// h3-start
+		// h4-start
 		const kdh4tl = gsap.timeline();
-
-		kdh4tl.from(".kd-hero-1-bg-img " , {  scaleX: 2 , duration:1, ease: "easeInOut",  delay: 1})
-		kdh4tl.from(".kd-hero-4-img img " , {  yPercent: 100 , duration:1, ease: "easeInOut", },)
+		kdh4tl.fromTo(".kd-hero-4-content .kd-subtitle-2  " , {  clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%"  }, {  clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)" ,duration:1, ease: "easeInOut", delay: 1 })
+		kdh4tl.from(".kd-hero-4-content .btn-wrap " , {  yPercent: 100 , opacity: 0, duration:1, ease: "easeInOut",  })
+		kdh4tl.from(".kd-hero-1-bg-img " , {  scaleX: 2 , duration:1, ease: "easeInOut",  }, "<-1")
+		kdh4tl.from(".kd-hero-4-img img " , {  yPercent: 100 , duration:1, ease: "easeInOut",  },"<1" )
+		
 		
 	})
 
@@ -1018,7 +1022,10 @@ if($('.kd-event-4-active').length) {
 		spaceBetween: 30,
 		loop: true,
 		speed: 1000,
-
+		autoplay: {
+			delay: 5000,
+		},
+		
 		navigation: {
 			nextEl: ".kd_event_4_slider_next",
 			prevEl: ".kd_event_4_slider_prev",
@@ -1106,12 +1113,6 @@ function parallax(e){
 $(function () {
 	$('[data-toggle="tooltip"]').tooltip()
 })
-
-/* faq-active-class */
-$(document).on('click', '.gly-accordion-item', function(){
-	$(this).addClass('faq_bg').siblings().removeClass('faq_bg')
-})
-
 
 /* back-to-top */
 var backtotop = $('.scroll-top');

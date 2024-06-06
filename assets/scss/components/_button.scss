@@ -368,6 +368,11 @@
         }
     }
 
+    &:is(.not-icon) {
+        &::after {
+            display: none;
+        }
+    }
 }
 /* 
     pr-btn-2-end

@@ -415,11 +415,17 @@
             line-height: 1;
             color: var(--kd-clr-pr-4);
             margin-bottom: 20px;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: 1s var(--cube-1);
         }
         .title {
             font-size: 34px;
             line-height: 1.17;
             margin-bottom: 22px;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: 1s var(--cube-1);
 
             @media #{$xs} {
                 font-size: 26px;
@@ -430,9 +436,15 @@
             font-size: 22px;
             line-height: 34px;
             margin-bottom: 45px;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: 1s var(--cube-1);
         }
 
         &-author {
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: 1s var(--cube-1);
             .author-name {
                 font-size: 24px;
                 line-height: 30px;
@@ -481,6 +493,40 @@
         &:hover {
             background: var(--kd-clr-pr-4);
             color: #fff;
+        }
+    }
+
+
+    &-slider {
+        .swiper-container {
+            .swiper-wrapper {
+                .swiper-slide {
+                    &:is(.swiper-slide-active) {
+                        .kd-testimonial-4-item {
+                            .icon {
+                                transform: translateY(0);
+                                opacity: 1;
+                                transition-delay: .5s;
+                            }
+                            .title {
+                                transform: translateY(0);
+                                opacity: 1;
+                                transition-delay: .5s;
+                            }
+                            .comment {
+                                transform: translateY(0);
+                                opacity: 1;
+                                transition-delay: .5s;
+                            }
+                            .kd-testimonial-4-item-author {
+                                transform: translateY(0);
+                                opacity: 1;
+                                transition-delay: .8s;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     
