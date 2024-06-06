@@ -970,6 +970,10 @@ if($('.kd-team-4-slide-main-active').length) {
 		centeredSlides: false,
 		watchSlidesProgress: true,
 
+		autoplay: {
+			delay: 5000,
+		},
+
 		breakpoints: {
 			320: {
 				slidesPerView: 1,
@@ -1002,10 +1006,6 @@ if($('.kd-team-4-slide-main-active').length) {
 			crossFade: true
 		},
 
-		autoplay: {
-			delay: 5000,
-		},
-
 		thumbs: {
 			swiper: s3_thumb,
 		},
@@ -1023,7 +1023,7 @@ if($('.kd-event-4-active').length) {
 		loop: true,
 		speed: 1000,
 		autoplay: {
-			delay: 5000,
+			delay: 50000000,
 		},
 		
 		navigation: {

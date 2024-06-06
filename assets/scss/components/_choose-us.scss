@@ -363,11 +363,11 @@
             background: rgb(255 255 255 / 10%);
             border-radius: 10px;
             color: var(--kd-clr-sd-4);
-            font-size: 35px;
+            font-size: 45px;
             margin-bottom: 25px;
 
             &:is(.has-red) {
-                color: var(--kd-clr-pr-4);
+                color: #ff00e4;
             }
 
             &:is(.has-green) {

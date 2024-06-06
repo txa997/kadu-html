@@ -210,8 +210,8 @@
     line-height: 1;
     background: var(--kd-clr-pr-4);
     border-radius: 5px;
-    padding: 20px 12px;
-    padding-left: 20px;
+    padding: 20px 24px;
+    padding-right: 12px;
     position: relative;
     z-index: 1;
     transition: 0.3s var(--cube-1);
@@ -273,6 +273,11 @@
     &:hover {
         color: #fff;
         background: var(--kd-clr-sd-4);
+        padding-right: 24px;
+
+        .icon {
+            margin-left: 7px;
+        }
 
         &:hover {
             &::after {
@@ -369,6 +374,8 @@
     }
 
     &:is(.not-icon) {
+        padding: 20px 24px;
+        padding-right: 24px;
         &::after {
             display: none;
         }
