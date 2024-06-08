@@ -1,0 +1,8 @@
+about-1
+about-2
+about-3
+
+course-1
+course-2
+course-3
+course-details
