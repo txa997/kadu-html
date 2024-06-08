@@ -499,9 +499,6 @@
                 z-index: 1;
                 text-align: left;
 
-                @media #{$xs} {
-                    f
-                }
 
                 &::after {
                     content: "";
