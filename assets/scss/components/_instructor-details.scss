@@ -1,0 +1,203 @@
+/* 
+    instructor-details-1-satrt
+*/
+.kd-instructor-details {
+
+    &-area {
+        .instructor-inner-title {
+            font-family: var(--kd-font-pr-1);
+            font-weight: 800;
+            text-transform: capitalize;
+            font-size: 42px;
+            line-height: 1.19;
+            margin-bottom: 30px;
+            color: var(--kd-clr-h-1);
+
+            @media #{$lg} {
+                font-size: 36px;
+            }
+            @media #{$md} {
+                font-size: 34px;
+            }
+            @media #{$xs} {
+                font-size: 28px;
+            }
+        }
+    }
+
+    &-single {
+        background: rgb(0 94 78 / 5%);
+        border-radius: 20px;
+        padding: 45px 45px;
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 50px;
+        margin-bottom: 130px;
+
+        @media #{$lg} {
+            gap: 30px;
+            padding: 45px 25px;
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr;
+        }
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+            padding: 45px 15px;
+        }
+
+
+        
+        .instrutor-img {
+            height: 525px;
+            border-radius: 18px;
+            overflow: hidden;
+
+            @media #{$xs} {
+                height: 345px;
+            }
+
+            @media #{$sm} {
+                height: 525px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+        }
+
+        .instructor-bio {
+            font-family: var(--kd-font-pr-1);
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 26px;
+            color: var(--kd-clr-pr-1);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .instructor-name {
+            font-family: var(--kd-font-pr-1);
+            font-weight: 700;
+            text-transform: capitalize;
+            font-size: 52px;
+            line-height: 1.19;
+            color: var(--kd-clr-h-1);
+            margin-bottom: 20px;
+
+            @media #{$xl,$lg,$md} {
+                font-size: 45px;
+            }
+
+            @media #{$xs} {
+                font-size: 28px;
+            }
+
+            @media #{$sm} {
+                font-size: 32px;
+            }
+        }
+
+        .instroctor-disc {
+            font-family: var(--kd-font-pr-1);
+            font-size: 18px;
+            line-height: 30px;
+            color: var(--kd-clr-p-1);
+            margin-bottom: 25px;
+        }
+        
+        .instructor-contact {
+            margin-bottom: 30px;
+            li {
+                display: flex;
+                align-items: baseline;
+                gap: 18px;
+                font-family: var(--kd-font-pr-1);
+                color: var(--kd-clr-h-1);
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 30px;
+
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+
+                a {
+                    display: flex;
+                    align-items: baseline;
+                    gap: 18px;
+                    transition: .4s ease;
+
+                    &:hover {
+                        color: var(--kd-clr-sd-1);
+
+                        i {
+                            animation: 1s kd-jello;
+                            color: var(--kd-clr-sd-1);
+                            border-color: var(--kd-clr-sd-1);
+                        }
+                    }
+                }
+
+                i {
+                    display: flex;
+                    flex: 0 0 auto;
+                    width: 48px;
+                    height: 48px;
+                    border: 1px solid var(--kd-clr-pr-1);
+                    border-radius: 50%;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 18px;
+                    color: var(--kd-clr-pr-1);
+                }
+            }
+        }
+
+        
+        .instructor-social {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+
+            .link {
+                flex: 0 0 auto;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-family: var(--kd-font-pr-1);
+                text-transform: capitalize;
+                color: var(--kd-clr-h-1);
+                border: 1px solid rgba(0, 94, 78, 0.2);
+                border-radius: 10px;
+                padding: 5px 14px;
+                transition: 0.4s ease;
+                font-size: 18px;
+
+
+                i {
+                    display: inline-block;
+                    color: var(--kd-clr-pr-1);
+                    transition: .4s ease;
+                }
+
+                &:hover {
+                    background: var(--kd-clr-pr-1);
+                    color: #fff;
+                    i {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 
+    instructor-details-1-ened
+*/
