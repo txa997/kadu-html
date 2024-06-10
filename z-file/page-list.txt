@@ -11,3 +11,11 @@ instructor
 instructor-details
 
 event
+event-details
+
+prices
+gallery
+
+blog
+
+
