@@ -1,0 +1,63 @@
+/* 
+    privacy-page-start
+*/
+
+.privacy-page-content {
+    .title {
+        font-family: var(--kd-font-pr-1);
+        font-size: 30px;
+        line-height: 1.33;
+        font-weight: 900;
+        color: var(--kd-clr-h-1);
+        margin-bottom: 20px;
+
+        @media #{$xs} {
+            font-size: 22px;
+        }
+
+        @media #{$sm} {
+            font-size: 26px;
+        }
+    }
+    
+    .disc {
+        font-family: var(--kd-font-pr-1);
+        font-size: 20px;
+        line-height: 32px;
+        color: var(--kd-clr-p-1);
+        margin-bottom: 25px;
+    }
+
+    .list-text {
+        margin-bottom: 25px;
+        li {
+            font-family: var(--kd-font-pr-1);
+            font-size: 20px;
+            line-height: 32px;
+            color: var(--kd-clr-p-1);
+            position: relative;
+            z-index: 1;
+            padding-left: 20px;
+            
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+
+            &::after {
+                content: "";
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: var(--kd-clr-pr-1);
+                position: absolute;
+                left: 0;
+                top: 12px;
+            }
+
+        }
+    }
+}
+
+/* 
+    privacy-page-end
+*/

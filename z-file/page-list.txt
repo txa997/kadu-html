@@ -16,6 +16,11 @@ event-details
 prices
 gallery
 
-blog
+blog-1
+blog-2
+blog-details
+
+contact
+error
 
 

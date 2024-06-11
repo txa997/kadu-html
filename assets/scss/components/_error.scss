@@ -1,0 +1,117 @@
+/* 
+    error-start
+*/
+.error-page-content {
+    text-align: center;
+
+    img {
+        margin-bottom: 50px;
+    }
+
+    .title {
+        font-family: var(--kd-font-pr-1);
+        font-size: 55px;
+        line-height: 1.18;
+        color: var(--kd-clr-h-1);
+        font-weight: 900;
+        margin-bottom: 50px;
+
+        @media #{$lg} {
+            font-size: 45px;
+        }
+
+        @media #{$md} {
+            font-size: 40px;
+        }
+
+        @media #{$xs} {
+            font-size: 30px;
+        }
+
+        @media #{$sm} {
+            font-size: 35px;
+        }
+    }
+
+    .error-btn {
+        display: inline-block;
+        font-family: var(--kd-font-pr-1);
+        color: #fff;
+        font-weight: 800;
+        font-size: 15px;
+        line-height: 1;
+        background: var(--kd-clr-pr-1);
+        border-radius: 30px;
+        padding: 20px 31px;
+        text-transform: capitalize;
+        position: relative;
+        z-index: 1;
+        transition: .3s var(--cube-1);
+    
+        .icon {
+            display: inline-block;
+            margin-left: 5px;
+            transition: .3s var(--cube-1);
+        }
+    
+        .text {
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            margin-bottom: -3px;
+    
+            &::after {
+                top: 0;
+                left: 0;
+                opacity: 0;
+                width: 100%;
+                display: block;
+                transition: 0.5s;
+                position: absolute;
+                background: transparent;
+                color: #000;
+                content: attr(data-back);
+                transform: translateX(-100%);
+            }
+        
+            &::before {
+                top: 0;
+                left: 0;
+                opacity: 1;
+                display: block;
+                transition: 0.5s;
+                position: relative;
+                background: var(--blta-pr-1);
+                color: #fff;
+                content: attr(data-front);
+                transform: translateX(0);
+            }
+        }
+    
+        &:hover {
+            color: #fff;
+            background: var(--kd-clr-sd-1);
+
+            .icon {
+                color: #000;
+            }
+        
+            .text {
+                &::after {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+                &::before {
+                    opacity: 0;
+                    transform: translateX(100%);
+                }
+            }
+    
+        }
+    
+    }
+}
+/* 
+    error-end
+*/
