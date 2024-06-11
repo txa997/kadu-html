@@ -10358,6 +10358,9 @@ input:focus::placeholder, textarea:focus::placeholder {
 /* 
     breadcrumb-start
 */
+.breadcrumb-area {
+  padding-top: 300px;
+}
 .breadcrumb-title {
   font-size: 80px;
   color: #fff;
