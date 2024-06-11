@@ -7,6 +7,7 @@
     &-area {
         position: relative;
         z-index: 1;
+        padding-top: 260px;
 
         @media #{$md,$xs} {
             background: #005E4F;

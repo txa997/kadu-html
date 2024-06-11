@@ -158,16 +158,16 @@ glystickyHeader();
 
 
 // mobile-menu-start
-if($('.mobile-main-navigation li.dropdown ul').length){
-	$('.mobile-main-navigation li.dropdown').append('<div class="dropdown-btn"><i class="fa-solid fa-angle-right"></i></div>');
-	$('.mobile-main-navigation li.dropdown .dropdown-btn').on('click', function() {
-		$(this).prev('ul').slideToggle(500);
+jQuery(".mobile-main-navigation li.dropdown").append('<span class="dropdown-btn"><i class="fa-solid fa-angle-right"></i></span>'),
+	jQuery(".mobile-main-navigation li .dropdown-btn").on("click", function () {
+		jQuery(this).hasClass("active")
+		? (jQuery(this).closest("ul").find(".dropdown-btn.active").toggleClass("active"), jQuery(this).closest("ul").find(".dropdown-menu.active").toggleClass("active").slideToggle())
+		: (jQuery(this).closest("ul").find(".dropdown-btn.active").toggleClass("active"),
+			jQuery(this).closest("ul").find(".dropdown-menu.active").toggleClass("active").slideToggle(),
+			jQuery(this).toggleClass("active"),
+			jQuery(this).parent().find("> .dropdown-menu").toggleClass("active"),
+			jQuery(this).parent().find("> .dropdown-menu").slideToggle());
 	});
-}
-
-$(".dropdown-btn").on("click", function () {
-	$(this).toggleClass("toggle-open");
-});
 
 
 // search-popup-start
@@ -195,13 +195,12 @@ if (menuToggle2) {
 	var menubgline = gsap.timeline({ paused: true });
 	
 	menubgline.to('.mobile-menu' , {
-		duration: 0,
 		display: "block",
 		ease: 'Expo.easeInOut'
 	});
 	menubgline.from('.mobile-menu-bg span' , {
-		duration: .5,
-		width: 100,
+		duration: 1,
+		width: 0,
 		stagger: 0.1,
 		ease: 'Expo.easeInOut'
 	});
@@ -210,7 +209,7 @@ if (menuToggle2) {
 		opacity: 0,
 		ease: 'Expo.easeInOut',
 		duration: 1,
-	});
+	}, "<" );
 	menubgline.from('.mobile-menu-close' , {
 		duration: 1,
 		xPercent: 50,
@@ -219,21 +218,28 @@ if (menuToggle2) {
 		opacity: 0,
 
 	}, "<");
-	menubgline.from('.mobile-main-navigation  ul li' , {
+	menubgline.from('.mobile-main-navigation ' , {
 		duration: .5,
 		opacity: 0,
 		y: 50,
-		stagger: .01,
-	},"<");
+	},"<.5");
 	menubgline.from('.mobile-menu-search-bar' , {
 		opacity: 0,
 		y: 50,
-	}, "<.5");
+	}, "<");
+
+	menubgline.from('.mobile-menu-right' , {
+		opacity: 0,
+		visibility: "hidden",
+		y: 50,
+	});
 
 	menubgline.from('.mobile-menu-socail-link' , {
 		opacity: 0,
 		x: 50,
 	});
+
+
 	
 	menubgline.reverse();
 	menuToggle.addEventListener('click', function(){
